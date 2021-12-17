@@ -123,6 +123,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Cosmonaut": {
+              "target": "Package",
+              "version": "[2.11.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -188,6 +194,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Humanizer.Core": {
+              "target": "Package",
+              "version": "[2.13.14, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.1, )"
