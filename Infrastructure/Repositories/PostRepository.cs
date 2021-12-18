@@ -27,9 +27,15 @@ namespace Infrastructure.Repositories
 
         #region IPostRepository
 
-        public async Task<IEnumerable<Post>> GetAllAsync()
+        public async Task<IEnumerable<Post>> GetAllAsync(int pageNumber, int pageSize)
         {
-            return await _context.Posts.ToListAsync();
+            var postsCount = (pageNumber - 1) * pageSize;
+
+            return await _context.Posts.Skip(postsCount).Take(pageSize).ToListAsync();
+        }
+        public async Task<int> GetAllCountAsync()
+        {
+            return await _context.Posts.CountAsync();
         }
 
         public async Task<Post> GetByIdAsync(int id)

@@ -15,7 +15,7 @@ namespace WebAPI.Installers
 
             services.AddApiVersioning(x =>
             {
-                x.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(2, 0);
+                x.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(1, 0);
                 //jeżeli klient nie poda w żądaniu wersji interfejsu api to zostanie użyta wersja domyślna
                 x.AssumeDefaultVersionWhenUnspecified = true;
                 //dodaje nagłówek odpowiedzi API Supported version

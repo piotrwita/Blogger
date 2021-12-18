@@ -2,10 +2,13 @@
 using Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
+using WebAPI.Filters;
+using WebAPI.Helpers;
+using WebAPI.Wrappers;
 
 namespace WebAPI.Controllers.V1
 {
-    [ApiExplorerSettings(IgnoreApi = true)]
+    //[ApiExplorerSettings(IgnoreApi = true)]
     //Zapamiętać, że async zmienić w Repository Services oraz Controllers
     [ApiVersion("1.0")]
     [Route("api/[controller]")]
@@ -21,10 +24,15 @@ namespace WebAPI.Controllers.V1
 
         [SwaggerOperation(Summary = "Retrieves all posts")]
         [HttpGet]
-        public async Task<IActionResult> GetAsync()
+        public async Task<IActionResult> GetAsync([FromQuery] /*Wartość parametru zostanie pobrana z ciągu zapytania*/ PaginationFilter paginationFilter)
         {
-            var posts = await _postService.GetAllPostsAsync();
-            return Ok(posts);
+            var validPaginationFilter = new PaginationFilter(paginationFilter.PageNumber,paginationFilter.PageSize);
+
+            var posts = await _postService.GetAllPostsAsync(validPaginationFilter.PageNumber, validPaginationFilter.PageSize);
+            var totalRecords = await _postService.GetAllPostsCountAsync();
+            var pagedResponse = PaginationHelper.CreatePagedResponse(posts, validPaginationFilter, totalRecords);
+
+            return Ok(pagedResponse);
         }
 
         [SwaggerOperation(Summary = "Retrieves a specyfic post by unique id")]
@@ -36,19 +44,24 @@ namespace WebAPI.Controllers.V1
             if (post == null)
                 return NotFound();
 
-            return Ok(post);
+            return Ok(new Response<PostDto>(post));
         }
 
         [SwaggerOperation(Summary = "Retrieves a specific posts by title")]
         [HttpGet("Serach/{title}")]
-        public async Task<IActionResult> Get(string title)
+        public async Task<IActionResult> Get(string title, [FromQuery] PaginationFilter paginationFilter)
         {
-            var posts = await _postService.SearchPostByTitleAsync(title);
+            var validPaginationFilter = new PaginationFilter(paginationFilter.PageNumber, paginationFilter.PageSize);
+
+            var posts = await _postService.SearchPostByTitleAsync(title, validPaginationFilter.PageNumber, validPaginationFilter.PageSize);            
 
             if (posts == null)
                 return NotFound();
 
-            return Ok(posts);
+            var totalRecords = await _postService.GetAllPostsCountAsync();
+            var pagedResponse = PaginationHelper.CreatePagedResponse(posts, validPaginationFilter, totalRecords);
+
+            return Ok(pagedResponse);
         }
 
         [SwaggerOperation(Summary = "Create a new post")]
@@ -56,7 +69,7 @@ namespace WebAPI.Controllers.V1
         public async Task<IActionResult> Create(CreatePostDto newPost)
         {
             var post = await _postService.AddNewPostAsync(newPost);
-            return Created($"api/posts/{post.Id}",post);
+            return Created($"api/posts/{post.Id}", new Response<PostDto>(post));
         }
 
         [SwaggerOperation(Summary = "Update a existing post")]
