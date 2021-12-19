@@ -1,4 +1,5 @@
 ﻿using Microsoft.OpenApi.Models;
+using OData.Swagger.Services;
 
 namespace WebAPI.Installers
 {
@@ -12,6 +13,8 @@ namespace WebAPI.Installers
                 c.EnableAnnotations();
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Blogger API", Version = "v1" });
             });
+
+            services.AddOdataSwaggerSupport();
         }
     }
 }

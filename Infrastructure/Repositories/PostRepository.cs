@@ -27,16 +27,28 @@ namespace Infrastructure.Repositories
         #endregion
 
         #region IPostRepository
+        public IQueryable<Post> GetAll()
+        {
+            return _context.Posts.AsQueryable();
+        }
 
-        public async Task<IEnumerable<Post>> GetAllAsync(int pageNumber, int pageSize, string sortField, bool ascengind)
+        public async Task<IEnumerable<Post>> GetAllAsync(int pageNumber, int pageSize, string sortField, bool ascengind, string filterBy)
         {
             var postsCount = (pageNumber - 1) * pageSize;
 
-            return await _context.Posts.OrderByPropertyName(sortField,ascengind).Skip(postsCount).Take(pageSize).ToListAsync();
+            return await _context.Posts
+                .Where(f => f.Title.ToLower().Contains(filterBy.ToLower()) || f.Content.ToLower().Contains(filterBy.ToLower()))
+                .OrderByPropertyName(sortField,ascengind)
+                .Skip(postsCount)
+                .Take(pageSize)
+                .ToListAsync();
         }
-        public async Task<int> GetAllCountAsync()
+
+        public async Task<int> GetAllCountAsync(string filterBy)
         {
-            return await _context.Posts.CountAsync();
+            return await _context.Posts
+                .Where(f => f.Title.ToLower().Contains(filterBy.ToLower()) || f.Content.ToLower().Contains(filterBy.ToLower()))
+                .CountAsync();
         }
 
         public async Task<Post> GetByIdAsync(int id)

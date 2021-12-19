@@ -16,29 +16,28 @@ namespace Application.Services
                 mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
-        public async Task<IEnumerable<PostDto>> GetAllPostsAsync(int pageNumber, int pageSize, string sortField, bool ascengind)
+        public IQueryable<PostDto> GetAllPosts()
         {
-            var posts = await _postRepository.GetAllAsync(pageNumber, pageSize, sortField, ascengind);
+            var posts = _postRepository.GetAll();
+            //bada zwracany model i generuje tylko kod sql potrzebny do zwracania odpowiednich pól
+            return _mapper.ProjectTo<PostDto>(posts);
+        }
+
+        public async Task<IEnumerable<PostDto>> GetAllPostsAsync(int pageNumber, int pageSize, string sortField, bool ascengind, string filterBy)
+        {
+            var posts = await _postRepository.GetAllAsync(pageNumber, pageSize, sortField, ascengind, filterBy);
+            //zwracane są zawsze wszystkie pola określone przez model
             return _mapper.Map<IEnumerable<PostDto>>(posts);
         }
-        public async Task<int> GetAllPostsCountAsync()
+        public async Task<int> GetAllPostsCountAsync(string filterBy)
         {
-            return await _postRepository.GetAllCountAsync();
+            return await _postRepository.GetAllCountAsync(filterBy);
         }
 
         public async Task<PostDto> GetPostByIdAsync(int id)
         {
             var post = await _postRepository.GetByIdAsync(id);
             return _mapper.Map<PostDto>(post);
-        }
-
-        public async Task<IEnumerable<PostDto>> SearchPostByTitleAsync(string title, int pageNumber, int pageSize, string sortField, bool ascengind)
-        {
-            var lowerTitle = title.ToLowerInvariant();
-            var posts = await _postRepository.GetAllAsync(pageNumber, pageSize, sortField, ascengind);
-            //czy to jest ok?
-            var results = posts.Where(post => post.Title.ToLowerInvariant().Contains(lowerTitle));
-            return _mapper.Map<IEnumerable<PostDto>>(results);
         }
 
         public async Task<PostDto> AddNewPostAsync(CreatePostDto newPost)

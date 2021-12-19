@@ -80,3 +80,10 @@ C:\Users\piotr\source\repos\Blogger\WebAPI\obj\Debug\net6.0\WebAPI.dll
 C:\Users\piotr\source\repos\Blogger\WebAPI\obj\Debug\net6.0\ref\WebAPI.dll
 C:\Users\piotr\source\repos\Blogger\WebAPI\obj\Debug\net6.0\WebAPI.pdb
 C:\Users\piotr\source\repos\Blogger\WebAPI\obj\Debug\net6.0\WebAPI.genruntimeconfig.cache
+C:\Users\piotr\source\repos\Blogger\WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.OData.dll
+C:\Users\piotr\source\repos\Blogger\WebAPI\bin\Debug\net6.0\Microsoft.OData.Core.dll
+C:\Users\piotr\source\repos\Blogger\WebAPI\bin\Debug\net6.0\Microsoft.OData.Edm.dll
+C:\Users\piotr\source\repos\Blogger\WebAPI\bin\Debug\net6.0\Microsoft.Spatial.dll
+C:\Users\piotr\source\repos\Blogger\WebAPI\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\piotr\source\repos\Blogger\WebAPI\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\piotr\source\repos\Blogger\WebAPI\bin\Debug\net6.0\OData.Swagger.dll

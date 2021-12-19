@@ -1,5 +1,6 @@
 ﻿using Application;
 using Infrastructure;
+using Microsoft.AspNet.OData.Extensions;
 using Microsoft.AspNetCore.Mvc.Versioning;
 
 namespace WebAPI.Installers
@@ -11,7 +12,12 @@ namespace WebAPI.Installers
             services.AddApplication();
             services.AddInfrastructure();
 
-            services.AddControllers();
+            services.AddControllers()
+                .AddJsonOptions(options =>
+                {
+                    //konfiguracja pozwala wyświetlać w przeglądarce wynik w bardziej czytelny sposób
+                    options.JsonSerializerOptions.WriteIndented = true;
+                });
 
             services.AddApiVersioning(x =>
             {
@@ -23,6 +29,8 @@ namespace WebAPI.Installers
                 //ustawienie nazwy parametru odpowiedzialnego za wersję API
                 x.ApiVersionReader = new HeaderApiVersionReader("x-api-version");
             });
+
+            services.AddOData();
         }
     }
 }

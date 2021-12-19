@@ -1,5 +1,6 @@
 ﻿using Application.Dto;
 using Application.Interfaces;
+using Microsoft.AspNet.OData;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 using WebAPI.Filters;
@@ -32,7 +33,8 @@ namespace WebAPI.Controllers.V1
         [SwaggerOperation(Summary = "Retrieves all posts")]
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery] /*Wartość parametru zostanie pobrana z ciągu zapytania*/ PaginationFilter paginationFilter,
-                                                    [FromQuery] SortingFilter sortingFilter)
+                                                    [FromQuery] SortingFilter sortingFilter,
+                                                    [FromQuery] string filterBy = "")
         {
             var validPaginationFilter = new PaginationFilter(paginationFilter.PageNumber,paginationFilter.PageSize);
             var validSortFilter = new SortingFilter(sortingFilter.SortField, sortingFilter.Ascengind);
@@ -40,12 +42,21 @@ namespace WebAPI.Controllers.V1
             var posts = await _postService.GetAllPostsAsync(validPaginationFilter.PageNumber,
                                                             validPaginationFilter.PageSize,
                                                             validSortFilter.SortField, 
-                                                            validSortFilter.Ascengind);
+                                                            validSortFilter.Ascengind,
+                                                            filterBy);
 
-            var totalRecords = await _postService.GetAllPostsCountAsync();
+            var totalRecords = await _postService.GetAllPostsCountAsync(filterBy);
             var pagedResponse = PaginationHelper.CreatePagedResponse(posts, validPaginationFilter, totalRecords);
 
             return Ok(pagedResponse);
+        }
+
+        [SwaggerOperation(Summary = "Retrieves paged posts")]
+        [EnableQuery]
+        [HttpGet("[action]")]
+        public IQueryable<PostDto> GetAll()
+        {
+            return _postService.GetAllPosts();
         }
 
         [SwaggerOperation(Summary = "Retrieves a specyfic post by unique id")]
@@ -58,28 +69,6 @@ namespace WebAPI.Controllers.V1
                 return NotFound();
 
             return Ok(new Response<PostDto>(post));
-        }
-
-        [SwaggerOperation(Summary = "Retrieves a specific posts by title")]
-        [HttpGet("Serach/{title}")]
-        public async Task<IActionResult> Get(string title, [FromQuery] PaginationFilter paginationFilter, [FromQuery] SortingFilter sortingFilter)
-        {
-            var validPaginationFilter = new PaginationFilter(paginationFilter.PageNumber, paginationFilter.PageSize);
-            var validSortFilter = new SortingFilter(sortingFilter.SortField, sortingFilter.Ascengind);
-
-            var posts = await _postService.SearchPostByTitleAsync(title, 
-                                                                  validPaginationFilter.PageNumber,
-                                                                  validPaginationFilter.PageSize,
-                                                                  validSortFilter.SortField,
-                                                                  validSortFilter.Ascengind);            
-
-            if (posts == null)
-                return NotFound();
-
-            var totalRecords = await _postService.GetAllPostsCountAsync();
-            var pagedResponse = PaginationHelper.CreatePagedResponse(posts, validPaginationFilter, totalRecords);
-
-            return Ok(pagedResponse);
         }
 
         [SwaggerOperation(Summary = "Create a new post")]
