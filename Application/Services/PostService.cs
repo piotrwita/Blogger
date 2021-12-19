@@ -16,9 +16,9 @@ namespace Application.Services
                 mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
-        public async Task<IEnumerable<PostDto>> GetAllPostsAsync(int pageNumber, int pageSize)
+        public async Task<IEnumerable<PostDto>> GetAllPostsAsync(int pageNumber, int pageSize, string sortField, bool ascengind)
         {
-            var posts = await _postRepository.GetAllAsync(pageNumber, pageSize);
+            var posts = await _postRepository.GetAllAsync(pageNumber, pageSize, sortField, ascengind);
             return _mapper.Map<IEnumerable<PostDto>>(posts);
         }
         public async Task<int> GetAllPostsCountAsync()
@@ -32,10 +32,10 @@ namespace Application.Services
             return _mapper.Map<PostDto>(post);
         }
 
-        public async Task<IEnumerable<PostDto>> SearchPostByTitleAsync(string title, int pageNumber, int pageSize)
+        public async Task<IEnumerable<PostDto>> SearchPostByTitleAsync(string title, int pageNumber, int pageSize, string sortField, bool ascengind)
         {
             var lowerTitle = title.ToLowerInvariant();
-            var posts = await _postRepository.GetAllAsync(pageNumber, pageSize);
+            var posts = await _postRepository.GetAllAsync(pageNumber, pageSize, sortField, ascengind);
             //czy to jest ok?
             var results = posts.Where(post => post.Title.ToLowerInvariant().Contains(lowerTitle));
             return _mapper.Map<IEnumerable<PostDto>>(results);

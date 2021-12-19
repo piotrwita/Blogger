@@ -22,13 +22,26 @@ namespace WebAPI.Controllers.V1
                 postService ?? throw new ArgumentNullException(nameof(postService));
         }
 
+        [SwaggerOperation(Summary = "Retrieves sort fields")]
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetSortFields()
+        {
+            return Ok(SortingHelper.GetSortFields().Select(x => x.Key));
+        }
+
         [SwaggerOperation(Summary = "Retrieves all posts")]
         [HttpGet]
-        public async Task<IActionResult> GetAsync([FromQuery] /*Wartość parametru zostanie pobrana z ciągu zapytania*/ PaginationFilter paginationFilter)
+        public async Task<IActionResult> Get([FromQuery] /*Wartość parametru zostanie pobrana z ciągu zapytania*/ PaginationFilter paginationFilter,
+                                                    [FromQuery] SortingFilter sortingFilter)
         {
             var validPaginationFilter = new PaginationFilter(paginationFilter.PageNumber,paginationFilter.PageSize);
+            var validSortFilter = new SortingFilter(sortingFilter.SortField, sortingFilter.Ascengind);
 
-            var posts = await _postService.GetAllPostsAsync(validPaginationFilter.PageNumber, validPaginationFilter.PageSize);
+            var posts = await _postService.GetAllPostsAsync(validPaginationFilter.PageNumber,
+                                                            validPaginationFilter.PageSize,
+                                                            validSortFilter.SortField, 
+                                                            validSortFilter.Ascengind);
+
             var totalRecords = await _postService.GetAllPostsCountAsync();
             var pagedResponse = PaginationHelper.CreatePagedResponse(posts, validPaginationFilter, totalRecords);
 
@@ -49,11 +62,16 @@ namespace WebAPI.Controllers.V1
 
         [SwaggerOperation(Summary = "Retrieves a specific posts by title")]
         [HttpGet("Serach/{title}")]
-        public async Task<IActionResult> Get(string title, [FromQuery] PaginationFilter paginationFilter)
+        public async Task<IActionResult> Get(string title, [FromQuery] PaginationFilter paginationFilter, [FromQuery] SortingFilter sortingFilter)
         {
             var validPaginationFilter = new PaginationFilter(paginationFilter.PageNumber, paginationFilter.PageSize);
+            var validSortFilter = new SortingFilter(sortingFilter.SortField, sortingFilter.Ascengind);
 
-            var posts = await _postService.SearchPostByTitleAsync(title, validPaginationFilter.PageNumber, validPaginationFilter.PageSize);            
+            var posts = await _postService.SearchPostByTitleAsync(title, 
+                                                                  validPaginationFilter.PageNumber,
+                                                                  validPaginationFilter.PageSize,
+                                                                  validSortFilter.SortField,
+                                                                  validSortFilter.Ascengind);            
 
             if (posts == null)
                 return NotFound();

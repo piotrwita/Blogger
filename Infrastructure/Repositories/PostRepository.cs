@@ -1,5 +1,6 @@
 ﻿using Domain.Entities;
 using Infrastructure.Data;
+using Infrastructure.ExtensionMethods;
 
 namespace Infrastructure.Repositories
 {
@@ -27,11 +28,11 @@ namespace Infrastructure.Repositories
 
         #region IPostRepository
 
-        public async Task<IEnumerable<Post>> GetAllAsync(int pageNumber, int pageSize)
+        public async Task<IEnumerable<Post>> GetAllAsync(int pageNumber, int pageSize, string sortField, bool ascengind)
         {
             var postsCount = (pageNumber - 1) * pageSize;
 
-            return await _context.Posts.Skip(postsCount).Take(pageSize).ToListAsync();
+            return await _context.Posts.OrderByPropertyName(sortField,ascengind).Skip(postsCount).Take(pageSize).ToListAsync();
         }
         public async Task<int> GetAllCountAsync()
         {
