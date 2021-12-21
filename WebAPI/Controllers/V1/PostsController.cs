@@ -9,7 +9,7 @@ using WebAPI.Wrappers;
 
 namespace WebAPI.Controllers.V1
 {
-    [ApiExplorerSettings(IgnoreApi = true)]
+    //[ApiExplorerSettings(IgnoreApi = true)]
     //Zapamiętać, że async zmienić w Repository Services oraz Controllers
     [ApiVersion("1.0")]
     [Route("api/[controller]")]
