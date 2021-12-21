@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "IsaA24tbk1yJgwNFR4G0ezCX6O/7Vx/zEgdz/3YJ9+cEITn9x/U0lzpUSTf9Knlu8SNKvZIqy09tUShIZt5Pag==",
+  "dgSpecHash": "z4TD0+UqWU81EHeVrPzWN7/zTtp9zZRc3uHnN+e0c82SoIwhC9oUt4L7fqwqAQB5L4n6MJRfy06/+SogKS/iEw==",
   "success": true,
   "projectFilePath": "C:\\Users\\piotr\\source\\repos\\Blogger\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\piotr\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\cosmonaut\\2.11.3\\cosmonaut.2.11.3.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\cosmonaut.extensions.microsoft.dependencyinjection\\2.3.0\\cosmonaut.extensions.microsoft.dependencyinjection.2.3.0.nupkg.sha512",
+    "C:\\Users\\piotr\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\humanizer.core\\2.13.14\\humanizer.core.2.13.14.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\humanizer.core.uk\\2.5.16\\humanizer.core.uk.2.5.16.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

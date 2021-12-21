@@ -1,6 +1,6 @@
 ﻿using Application.Dto;
 using Application.Interfaces;
-using Microsoft.AspNet.OData;
+//using Microsoft.AspNet.OData;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 using WebAPI.Filters;
@@ -9,7 +9,7 @@ using WebAPI.Wrappers;
 
 namespace WebAPI.Controllers.V1
 {
-    //[ApiExplorerSettings(IgnoreApi = true)]
+    [ApiExplorerSettings(IgnoreApi = true)]
     //Zapamiętać, że async zmienić w Repository Services oraz Controllers
     [ApiVersion("1.0")]
     [Route("api/[controller]")]
@@ -52,7 +52,7 @@ namespace WebAPI.Controllers.V1
         }
 
         [SwaggerOperation(Summary = "Retrieves paged posts")]
-        [EnableQuery]
+        //[EnableQuery]
         [HttpGet("[action]")]
         public IQueryable<PostDto> GetAll()
         {

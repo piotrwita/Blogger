@@ -9,6 +9,7 @@
       "Infrastructure/1.0.0": {
         "dependencies": {
           "Application": "1.0.0",
+          "Dapper": "2.0.123",
           "Humanizer.Core": "2.13.14",
           "Microsoft.EntityFrameworkCore": "6.0.1",
           "Microsoft.EntityFrameworkCore.Design": "6.0.1",
@@ -55,6 +56,14 @@
           "lib/netstandard1.6/Cosmonaut.dll": {
             "assemblyVersion": "2.11.3.0",
             "fileVersion": "2.11.3.0"
+          }
+        }
+      },
+      "Dapper/2.0.123": {
+        "runtime": {
+          "lib/net5.0/Dapper.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.123.33578"
           }
         }
       },
@@ -1511,6 +1520,13 @@
       "sha512": "sha512-ZOCeN1D5KPqytWC3s4/zSKIB2/u8225kPgO8Z6etb1WaDtYWAEJgUrs/Hg03pBG+sWYnczhixZn2VxiffEV46g==",
       "path": "cosmonaut/2.11.3",
       "hashPath": "cosmonaut.2.11.3.nupkg.sha512"
+    },
+    "Dapper/2.0.123": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RDFF4rBLLmbpi6pwkY7q/M6UXHRJEOerplDGE5jwEkP/JGJnBauAClYavNKJPW1yOTWRPIyfj4is3EaJxQXILQ==",
+      "path": "dapper/2.0.123",
+      "hashPath": "dapper.2.0.123.nupkg.sha512"
     },
     "Humanizer.Core/2.13.14": {
       "type": "package",

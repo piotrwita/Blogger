@@ -1,6 +1,6 @@
 using Application.Dto;
-using Microsoft.AspNet.OData.Builder;
-using Microsoft.AspNet.OData.Extensions;
+//using Microsoft.AspNet.OData.Builder;
+//using Microsoft.AspNet.OData.Extensions;
 using Microsoft.OData.Edm;
 using WebAPI.Installers;
 
@@ -23,26 +23,25 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.UseEndpoints(endpoints =>
-{
-    //w³¹czamy us³ugê wstrzykiwania zale¿noœci dla tras http
-    endpoints.EnableDependencyInjection();
-    //definiujemy mo¿liwe do wykonania operacje
-    endpoints.Filter().OrderBy().MaxTop(10);
-    //definiujemy routing. Jaki model bêdzie reprezentowany przez jak¹ encjê
-    endpoints.MapODataRoute("odata", "odata", GetEdmModel());
+app.MapControllers();
 
-    endpoints.MapControllers();
-});
+//app.UseEndpoints(endpoints =>
+//{
+//    //w³¹czamy us³ugê wstrzykiwania zale¿noœci dla tras http
+//    endpoints.EnableDependencyInjection();
+//    //definiujemy mo¿liwe do wykonania operacje
+//    endpoints.Filter().OrderBy().MaxTop(10);
+//    //definiujemy routing. Jaki model bêdzie reprezentowany przez jak¹ encjê
+//    endpoints.MapODataRoute("odata", "odata", GetEdmModel());
+//});
 
 app.Run();
 
+//static IEdmModel GetEdmModel()
+//{
+//    var builder = new ODataConventionModelBuilder();
+//    //wskazujemy, ¿e encjê Posts, bêdzie reprezentowa³ model PostDto
+//    builder.EntitySet<PostDto>("Posts");
 
-static IEdmModel GetEdmModel()
-{
-    var builder = new ODataConventionModelBuilder();
-    //wskazujemy, ¿e encjê Posts, bêdzie reprezentowa³ model PostDto
-    builder.EntitySet<PostDto>("Posts");
-
-    return builder.GetEdmModel();
-}
+//    return builder.GetEdmModel();
+//}

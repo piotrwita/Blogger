@@ -1,6 +1,6 @@
 ﻿using Application;
 using Infrastructure;
-using Microsoft.AspNet.OData.Extensions;
+//using Microsoft.AspNet.OData.Extensions;
 using Microsoft.AspNetCore.Mvc.Versioning;
 
 namespace WebAPI.Installers
@@ -30,7 +30,7 @@ namespace WebAPI.Installers
                 x.ApiVersionReader = new HeaderApiVersionReader("x-api-version");
             });
 
-            services.AddOData();
+            //services.AddOData();
         }
     }
 }

@@ -87,3 +87,6 @@ C:\Users\piotr\source\repos\Blogger\WebAPI\bin\Debug\net6.0\Microsoft.Spatial.dl
 C:\Users\piotr\source\repos\Blogger\WebAPI\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Users\piotr\source\repos\Blogger\WebAPI\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\piotr\source\repos\Blogger\WebAPI\bin\Debug\net6.0\OData.Swagger.dll
+C:\Users\piotr\source\repos\Blogger\WebAPI\bin\Debug\net6.0\Dapper.dll
+C:\Users\piotr\source\repos\Blogger\WebAPI\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\piotr\source\repos\Blogger\WebAPI\bin\Debug\net6.0\Microsoft.OData.ModelBuilder.dll

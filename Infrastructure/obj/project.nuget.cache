@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "joBTfzx1uHRvXMYg95EswyCzdSIwUOIUuPBXj60LAy6haP+JewYVs9n77HUC/V4LP4rgGcvkc4Qm13zuaTJZOQ==",
+  "dgSpecHash": "VqWMTALs1GsjAy04tU42ce7+GayaFLmNp8XzerLxwV4CkoBEhqiiI7bEIY+z2Wxs3VZtvqwUdNaBTbag5jqmAg==",
   "success": true,
   "projectFilePath": "C:\\Users\\piotr\\source\\repos\\Blogger\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\piotr\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\cosmonaut\\2.11.3\\cosmonaut.2.11.3.nupkg.sha512",
+    "C:\\Users\\piotr\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\humanizer.core\\2.13.14\\humanizer.core.2.13.14.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\humanizer.core.uk\\2.5.16\\humanizer.core.uk.2.5.16.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\microsoft.azure.documentdb.core\\2.5.1\\microsoft.azure.documentdb.core.2.5.1.nupkg.sha512",

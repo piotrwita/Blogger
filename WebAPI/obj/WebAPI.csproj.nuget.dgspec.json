@@ -194,6 +194,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.123, )"
+            },
             "Humanizer.Core": {
               "target": "Package",
               "version": "[2.13.14, )"
