@@ -1,7 +1,5 @@
-using Application.Dto;
 //using Microsoft.AspNet.OData.Builder;
 //using Microsoft.AspNet.OData.Extensions;
-using Microsoft.OData.Edm;
 using WebAPI.Installers;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,6 +18,8 @@ app.UseSwagger();
 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebAPI v1"));
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

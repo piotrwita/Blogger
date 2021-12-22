@@ -1,12 +1,18 @@
 ﻿using Infrastructure.Identity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 using WebAPI.Models;
 using WebAPI.Wrappers;
 
 namespace WebAPI.Controllers.V1
-{
+{    
     [Route("api/[controller]")]
+    [ApiVersion("1.0")]
     [ApiController]
     public class IdentityController : ControllerBase
     {
@@ -76,6 +82,50 @@ namespace WebAPI.Controllers.V1
             };
 
             return Ok(response);
+        }
+
+        [HttpPost]
+        [Route("Login")]
+        public async Task<IActionResult> Login(LoginModel login)
+        {
+            var user = await _userManager.FindByNameAsync(login.UserName);
+
+            if (user != null && await _userManager.CheckPasswordAsync(user, login.Password))
+            {
+                //generowanie tokena
+                //Tworzenie oswiadczenia (info o uzytkowniku. rolach, uprawnieniach)
+                var authClaims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.NameIdentifier, user.Id),
+                    //poswiadczenie - nazwa użytkownika
+                    new Claim(ClaimTypes.Name, user.UserName),
+                    //identyfikator JWT - zapewnia unikalny id dla tokena JWT
+                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+                };
+
+                //klucz podpisu autoryzacji
+                var authSignigKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
+
+                //poświaczenia podpisu
+                var signCredentials = new SigningCredentials(authSignigKey, SecurityAlgorithms.HmacSha256);
+
+                //tworzymy unikalny token
+                var token = new JwtSecurityToken(
+                    expires: DateTime.Now.AddHours(2),
+                    claims: authClaims,
+                    signingCredentials: signCredentials
+                    );
+
+                //token z informacją o dacie wygaśnięcia
+                var extendedToken = new
+                {
+                    token = new JwtSecurityTokenHandler().WriteToken(token),
+                    expitarion = token.ValidTo
+                };
+
+                return Ok(extendedToken);
+            }
+            return Unauthorized();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Application;
+using Application.Services;
 using Infrastructure;
 //using Microsoft.AspNet.OData.Extensions;
 using Microsoft.AspNetCore.Mvc.Versioning;
@@ -29,6 +30,10 @@ namespace WebAPI.Installers
                 //ustawienie nazwy parametru odpowiedzialnego za wersję API
                 x.ApiVersionReader = new HeaderApiVersionReader("x-api-version");
             });
+
+            services.AddAuthorization();
+
+            services.AddTransient<UserResolverService>();
 
             //services.AddOData();
         }

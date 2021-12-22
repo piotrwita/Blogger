@@ -40,12 +40,13 @@ namespace Application.Services
             return _mapper.Map<PostDto>(post);
         }
 
-        public async Task<PostDto> AddNewPostAsync(CreatePostDto newPost)
+        public async Task<PostDto> AddNewPostAsync(CreatePostDto newPost, string userId)
         {
             if (string.IsNullOrEmpty(newPost.Title))
                 throw new Exception("Post can not have an empty title");
 
             var post = _mapper.Map<Post>(newPost);
+            post.UserId = userId;
             var results = await _postRepository.AddAsync(post);
             return _mapper.Map<PostDto>(results);
         }
@@ -61,6 +62,16 @@ namespace Application.Services
         {
             var post = await _postRepository.GetByIdAsync(id);
             await _postRepository.DeleteAsync(post);
+        }
+
+        public async Task<bool> UserOwnPostAsync(int postId, string userId)
+        {
+            var post = await _postRepository.GetByIdAsync(postId);
+
+            if (post == null || post.UserId != userId)
+                return false;
+
+            return true;
         }
     }
 }

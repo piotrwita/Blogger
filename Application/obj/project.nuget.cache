@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "07sY6dBejApF38EJ+8A3KE20aMd2OLAJpxHM4OvfBcYQdp5N/c5VyzbEOQ3NUwsqNvDIeTjszgdr3R3FsEpyZQ==",
+  "dgSpecHash": "A9Tl5cwcso4RkDQIWLfFXuvx4sas64eOvW13vRbHdv0zxIEfC1WyfcorP2k+2QSs1pbCYLt8xC8D9YNP8Xyw9g==",
   "success": true,
   "projectFilePath": "C:\\Users\\piotr\\source\\repos\\Blogger\\Application\\Application.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,8 @@
     "C:\\Users\\piotr\\.nuget\\packages\\cosmonaut\\2.11.3\\cosmonaut.2.11.3.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\humanizer.core\\2.5.16\\humanizer.core.2.5.16.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\humanizer.core.uk\\2.5.16\\humanizer.core.uk.2.5.16.nupkg.sha512",
+    "C:\\Users\\piotr\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "C:\\Users\\piotr\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\microsoft.azure.documentdb.core\\2.5.1\\microsoft.azure.documentdb.core.2.5.1.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
@@ -98,6 +100,7 @@
     "C:\\Users\\piotr\\.nuget\\packages\\system.security.securestring\\4.0.0\\system.security.securestring.4.0.0.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\system.text.encoding.extensions\\4.3.0\\system.text.encoding.extensions.4.3.0.nupkg.sha512",
+    "C:\\Users\\piotr\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\system.text.regularexpressions\\4.3.0\\system.text.regularexpressions.4.3.0.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\system.threading\\4.3.0\\system.threading.4.3.0.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\system.threading.overlapped\\4.0.1\\system.threading.overlapped.4.0.1.nupkg.sha512",

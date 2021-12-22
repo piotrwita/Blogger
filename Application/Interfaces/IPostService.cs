@@ -6,8 +6,9 @@
         Task<IEnumerable<PostDto>> GetAllPostsAsync(int pageNumber, int pageSize, string sortField, bool ascengind, string filterBy);
         Task<int> GetAllPostsCountAsync(string filterBy);
         Task<PostDto> GetPostByIdAsync(int id);
-        Task<PostDto> AddNewPostAsync(CreatePostDto newPost);
+        Task<PostDto> AddNewPostAsync(CreatePostDto newPost, string userId);
         Task UpdatePostAsync(UpdatePostDto updatePost);
         Task DeletePostAsync(int id);
+        Task<bool> UserOwnPostAsync(int postId, string userId);
     }
 }
