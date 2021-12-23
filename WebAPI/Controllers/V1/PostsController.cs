@@ -1,5 +1,6 @@
 ﻿using Application.Dto;
 using Application.Interfaces;
+using Infrastructure.Identity;
 using Microsoft.AspNetCore.Authorization;
 //using Microsoft.AspNet.OData;
 using Microsoft.AspNetCore.Mvc;
@@ -16,7 +17,9 @@ namespace WebAPI.Controllers.V1
     [ApiVersion("1.0")]
     [Route("api/[controller]")]
     //umozliwa ograniczenie dostepu do zasobów na podstawie ról
-    [Authorize]
+    //określona rola z dostepem do żądanego zasobu z konrolera identity 
+    //nadrzedny
+    [Authorize(Roles = UserRoles.User)]
     [ApiController]
     public class PostsController : Controller
     {
@@ -36,7 +39,7 @@ namespace WebAPI.Controllers.V1
         }
 
         [SwaggerOperation(Summary = "Retrieves all posts")]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery] /*Wartość parametru zostanie pobrana z ciągu zapytania*/ PaginationFilter paginationFilter,
                                                     [FromQuery] SortingFilter sortingFilter,
@@ -58,8 +61,9 @@ namespace WebAPI.Controllers.V1
         }
 
         [SwaggerOperation(Summary = "Retrieves paged posts")]
+        [Authorize(Roles = UserRoles.Admin)]
         //[EnableQuery]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         [HttpGet("[action]")]
         public IQueryable<PostDto> GetAll()
         {
@@ -80,6 +84,7 @@ namespace WebAPI.Controllers.V1
         }
 
         [SwaggerOperation(Summary = "Create a new post")]
+        [Authorize(Roles = UserRoles.User)]
         [HttpPost]
         public async Task<IActionResult> Create(CreatePostDto newPost)
         {
@@ -88,6 +93,7 @@ namespace WebAPI.Controllers.V1
         }
 
         [SwaggerOperation(Summary = "Update a existing post")]
+        [Authorize(Roles = UserRoles.User)]
         [HttpPut]
         public async Task<IActionResult> Update(UpdatePostDto updatePost)
         {
@@ -109,12 +115,14 @@ namespace WebAPI.Controllers.V1
         }
 
         [SwaggerOperation(Summary = "Delete a specyfic post")]
+        [Authorize(Roles = UserRoles.AdminOrUser)]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             var userOwnPost = await _postService.UserOwnPostAsync(id, User.FindFirstValue(ClaimTypes.NameIdentifier));
+            var isAdmin = User.FindFirstValue(ClaimTypes.Role).Contains(UserRoles.Admin);
 
-            if (!userOwnPost)
+            if (!isAdmin && !userOwnPost)
             {
                 var response = new Response<bool>
                 {

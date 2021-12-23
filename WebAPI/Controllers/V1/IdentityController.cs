@@ -22,14 +22,24 @@ namespace WebAPI.Controllers.V1
         private readonly UserManager<ApplicationUser> _userManager;
 
         /// <summary>
+        /// Pozwala zarządzać rolami użytkowników   
+        /// </summary>
+        private readonly RoleManager<IdentityRole> _roleManager;
+
+        /// <summary>
         /// Pozwala pobrać ocje konfiguracji z pliku appsettingss.json
         /// </summary>
         private readonly IConfiguration _configuration;
 
-        public IdentityController(UserManager<ApplicationUser> userManager, IConfiguration configuration)
+        public IdentityController(UserManager<ApplicationUser> userManager,
+                                RoleManager<IdentityRole> roleManager, 
+                                IConfiguration configuration)
         {
-            _userManager = 
+            _userManager =
                 userManager ?? throw new ArgumentException(nameof(userManager));
+
+            _roleManager =
+                roleManager ?? throw new ArgumentException(nameof(roleManager));
 
             _configuration =
                 configuration ?? throw new ArgumentException(nameof(configuration));
@@ -75,6 +85,71 @@ namespace WebAPI.Controllers.V1
                 return StatusCode(StatusCodes.Status500InternalServerError, responseError);
             }
 
+            if (!await _roleManager.RoleExistsAsync(UserRoles.User))
+            {
+                var role = new IdentityRole(UserRoles.User);
+                await _roleManager.CreateAsync(role);
+            }
+
+            await _userManager.AddToRoleAsync(user, UserRoles.User);
+
+            var response = new Response<bool>
+            {
+                Succeeded = true,
+                Message = "User created successfully"
+            };
+
+            return Ok(response);
+        }
+
+        [HttpPost]
+        [Route("RegisterAdmin")]
+        public async Task<IActionResult> RegisterAdmin(RegisterModel register)
+        {
+            var userExists = await _userManager.FindByNameAsync(register.UserName);
+
+            if (userExists != null)
+            {
+                var responseError = new Response<bool>
+                {
+                    Succeeded = false,
+                    Message = "User already exists"
+                };
+
+                return StatusCode(StatusCodes.Status500InternalServerError, responseError);
+            }
+
+            ApplicationUser user = new ApplicationUser()
+            {
+                Email = register.Email,
+                //unikalny identyfikator gwarantuje nam, że za każdym razem, gdy zmieni się coś zwiąanego z bezpieczeństwem użytkownika
+                //np hasło to automatycznie zostaną unieważnone wszystkie pliki cookie z logowania
+                SecurityStamp = Guid.NewGuid().ToString(),
+                UserName = register.UserName,
+            };
+
+            var result = await _userManager.CreateAsync(user, register.Password);
+
+            if (!result.Succeeded)
+            {
+                var responseError = new Response<bool>
+                {
+                    Succeeded = false,
+                    Message = "User creation failed exists. Please check user details and try again",
+                    Errors = result.Errors.Select(x => x.Description)
+                };
+
+                return StatusCode(StatusCodes.Status500InternalServerError, responseError);
+            }
+
+            if (!await _roleManager.RoleExistsAsync(UserRoles.Admin))
+            {
+                var role = new IdentityRole(UserRoles.Admin);
+                await _roleManager.CreateAsync(role);
+            }
+
+            await _userManager.AddToRoleAsync(user, UserRoles.Admin);
+
             var response = new Response<bool>
             {
                 Succeeded = true,
@@ -101,6 +176,15 @@ namespace WebAPI.Controllers.V1
                     new Claim(ClaimTypes.Name, user.UserName),
                     //identyfikator JWT - zapewnia unikalny id dla tokena JWT
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+                };
+
+                //pobieranie wszystkich roli uzytkownika
+                var userRoles = await _userManager.GetRolesAsync(user);
+                //dla każej roli tworzymy nowe oświadczenie
+                foreach (var userRole in userRoles)
+                {
+                    var roleClaim = new Claim(ClaimTypes.Role, userRole);
+                    authClaims.Add(roleClaim);
                 };
 
                 //klucz podpisu autoryzacji
