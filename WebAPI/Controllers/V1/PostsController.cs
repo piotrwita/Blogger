@@ -19,7 +19,7 @@ namespace WebAPI.Controllers.V1
     //umozliwa ograniczenie dostepu do zasobów na podstawie ról
     //określona rola z dostepem do żądanego zasobu z konrolera identity 
     //nadrzedny
-    [Authorize(Roles = UserRoles.User)]
+    [Authorize(Roles = UserRoles.User + "," + UserRoles.Admin + "," + UserRoles.SuperUser)]
     [ApiController]
     public class PostsController : Controller
     {
@@ -39,7 +39,7 @@ namespace WebAPI.Controllers.V1
         }
 
         [SwaggerOperation(Summary = "Retrieves all posts")]
-        //[AllowAnonymous]
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery] /*Wartość parametru zostanie pobrana z ciągu zapytania*/ PaginationFilter paginationFilter,
                                                     [FromQuery] SortingFilter sortingFilter,
@@ -61,9 +61,8 @@ namespace WebAPI.Controllers.V1
         }
 
         [SwaggerOperation(Summary = "Retrieves paged posts")]
-        [Authorize(Roles = UserRoles.Admin)]
+        [Authorize(Roles = UserRoles.Admin + "," + UserRoles.SuperUser)]
         //[EnableQuery]
-        //[AllowAnonymous]
         [HttpGet("[action]")]
         public IQueryable<PostDto> GetAll()
         {
@@ -84,7 +83,7 @@ namespace WebAPI.Controllers.V1
         }
 
         [SwaggerOperation(Summary = "Create a new post")]
-        [Authorize(Roles = UserRoles.User)]
+        [Authorize(Roles = UserRoles.User + "," + UserRoles.SuperUser)]
         [HttpPost]
         public async Task<IActionResult> Create(CreatePostDto newPost)
         {
@@ -93,13 +92,14 @@ namespace WebAPI.Controllers.V1
         }
 
         [SwaggerOperation(Summary = "Update a existing post")]
-        [Authorize(Roles = UserRoles.User)]
+        [Authorize(Roles = UserRoles.User + "," + UserRoles.SuperUser)]
         [HttpPut]
         public async Task<IActionResult> Update(UpdatePostDto updatePost)
         {
             var userOwnPost = await _postService.UserOwnPostAsync(updatePost.Id, User.FindFirstValue(ClaimTypes.NameIdentifier));
-            
-            if (!userOwnPost)
+            var isSuperUser = User.FindFirstValue(ClaimTypes.Role).Contains(UserRoles.SuperUser);
+
+            if (!userOwnPost && !isSuperUser)
             {
                 var response = new Response<bool>
                 {
@@ -115,14 +115,15 @@ namespace WebAPI.Controllers.V1
         }
 
         [SwaggerOperation(Summary = "Delete a specyfic post")]
-        [Authorize(Roles = UserRoles.AdminOrUser)]
+        [Authorize(Roles = UserRoles.AdminOrUser + "," + UserRoles.SuperUser)]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             var userOwnPost = await _postService.UserOwnPostAsync(id, User.FindFirstValue(ClaimTypes.NameIdentifier));
             var isAdmin = User.FindFirstValue(ClaimTypes.Role).Contains(UserRoles.Admin);
+            var isSuperUser = User.FindFirstValue(ClaimTypes.Role).Contains(UserRoles.SuperUser);
 
-            if (!isAdmin && !userOwnPost)
+            if (!userOwnPost && !isAdmin && !isSuperUser)
             {
                 var response = new Response<bool>
                 {

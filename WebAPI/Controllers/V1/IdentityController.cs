@@ -160,6 +160,63 @@ namespace WebAPI.Controllers.V1
         }
 
         [HttpPost]
+        [Route("RegisterSuperUser")]
+        public async Task<IActionResult> RegisterSuperUser(RegisterModel register)
+        {
+            var userExists = await _userManager.FindByNameAsync(register.UserName);
+
+            if (userExists != null)
+            {
+                var responseError = new Response<bool>
+                {
+                    Succeeded = false,
+                    Message = "User already exists"
+                };
+
+                return StatusCode(StatusCodes.Status500InternalServerError, responseError);
+            }
+
+            ApplicationUser user = new ApplicationUser()
+            {
+                Email = register.Email,
+                //unikalny identyfikator gwarantuje nam, że za każdym razem, gdy zmieni się coś zwiąanego z bezpieczeństwem użytkownika
+                //np hasło to automatycznie zostaną unieważnone wszystkie pliki cookie z logowania
+                SecurityStamp = Guid.NewGuid().ToString(),
+                UserName = register.UserName,
+            };
+
+            var result = await _userManager.CreateAsync(user, register.Password);
+
+            if (!result.Succeeded)
+            {
+                var responseError = new Response<bool>
+                {
+                    Succeeded = false,
+                    Message = "User creation failed exists. Please check user details and try again",
+                    Errors = result.Errors.Select(x => x.Description)
+                };
+
+                return StatusCode(StatusCodes.Status500InternalServerError, responseError);
+            }
+
+            if (!await _roleManager.RoleExistsAsync(UserRoles.SuperUser))
+            {
+                var role = new IdentityRole(UserRoles.SuperUser);
+                await _roleManager.CreateAsync(role);
+            }
+
+            await _userManager.AddToRoleAsync(user, UserRoles.SuperUser);
+
+            var response = new Response<bool>
+            {
+                Succeeded = true,
+                Message = "User created successfully"
+            };
+
+            return Ok(response);
+        }
+
+        [HttpPost]
         [Route("Login")]
         public async Task<IActionResult> Login(LoginModel login)
         {
