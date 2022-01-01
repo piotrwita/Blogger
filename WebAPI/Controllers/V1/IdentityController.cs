@@ -1,5 +1,6 @@
-﻿using Infrastructure.Identity;
-using Microsoft.AspNetCore.Authorization;
+﻿using Application.Interfaces;
+using Domain.Enums;
+using Infrastructure.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -10,7 +11,7 @@ using WebAPI.Models;
 using WebAPI.Wrappers;
 
 namespace WebAPI.Controllers.V1
-{    
+{
     [Route("api/[controller]")]
     [ApiVersion("1.0")]
     [ApiController]
@@ -27,13 +28,16 @@ namespace WebAPI.Controllers.V1
         private readonly RoleManager<IdentityRole> _roleManager;
 
         /// <summary>
-        /// Pozwala pobrać ocje konfiguracji z pliku appsettingss.json
+        /// Pozwala pobrać opcje konfiguracji z pliku appsettingss.json
         /// </summary>
         private readonly IConfiguration _configuration;
 
+        private readonly IEmailSenderService _emailSenderService;
+
         public IdentityController(UserManager<ApplicationUser> userManager,
-                                RoleManager<IdentityRole> roleManager, 
-                                IConfiguration configuration)
+                                RoleManager<IdentityRole> roleManager,
+                                IConfiguration configuration,
+                                IEmailSenderService emailSenderService)
         {
             _userManager =
                 userManager ?? throw new ArgumentException(nameof(userManager));
@@ -43,6 +47,9 @@ namespace WebAPI.Controllers.V1
 
             _configuration =
                 configuration ?? throw new ArgumentException(nameof(configuration));
+
+            _emailSenderService =
+                emailSenderService ?? throw new ArgumentException(nameof(emailSenderService));
         }
 
         [HttpPost]
@@ -92,6 +99,8 @@ namespace WebAPI.Controllers.V1
             }
 
             await _userManager.AddToRoleAsync(user, UserRoles.User);
+
+            await _emailSenderService.Send(user.Email, "Registration confirmation", EmailTemplate.WelcomeMessage, user);
 
             var response = new Response<bool>
             {
