@@ -101,11 +101,10 @@ namespace WebAPI.Controllers.V1
 
             if (!userOwnPost && !isSuperUser)
             {
-                var response = new Response<bool>
-                {
-                    Succeeded = false,
-                    Message = "You do not own this post"
-                };
+                var succeeded = false;
+                var message = "You do not own this post";
+
+                var response = new Response(succeeded, message);
 
                 return BadRequest(response);
             }
@@ -125,11 +124,10 @@ namespace WebAPI.Controllers.V1
 
             if (!userOwnPost && !isAdmin && !isSuperUser)
             {
-                var response = new Response<bool>
-                {
-                    Succeeded = false,
-                    Message = "You do not own this post"
-                };
+                var succeeded = false;
+                var message = "You do not own this post";
+
+                var response = new Response(succeeded, message);
 
                 return BadRequest(response);
             }

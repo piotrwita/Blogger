@@ -3,6 +3,7 @@ using Application.Services;
 using Infrastructure;
 //using Microsoft.AspNet.OData.Extensions;
 using Microsoft.AspNetCore.Mvc.Versioning;
+using WebAPI.Middlewares;
 
 namespace WebAPI.Installers
 {
@@ -34,6 +35,8 @@ namespace WebAPI.Installers
             services.AddAuthorization();
 
             services.AddTransient<UserResolverService>();
+
+            services.AddScoped<ErrorHandlingMiddleware>();
 
             //services.AddOData();
         }

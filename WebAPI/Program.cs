@@ -1,6 +1,7 @@
 //using Microsoft.AspNet.OData.Builder;
 //using Microsoft.AspNet.OData.Extensions;
 using WebAPI.Installers;
+using WebAPI.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,17 +18,25 @@ app.UseDeveloperExceptionPage();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();// (c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebAPI v1"));
+    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebAPI v1"));
 }
 
+//co istotne musimy wywo³aæ middleware na samym pocz¹tku
+app.UseMiddleware<ErrorHandlingMiddleware>();
+
+//przekierowuje ¿¹dania inne ni¿ https do adresu url https
 app.UseHttpsRedirection();
 
+//dodaje dopasowanie trasy czyli nawigacje do odpowiednich akcji kontrolera
+app.UseRouting();
+//umo¿liwia ko¿ystanie z uwie¿ytelniania
 app.UseAuthentication();
-
+//umo¿liwia ko¿ystanie z autoryzacji
 app.UseAuthorization();
 
 app.MapControllers();
 
+//dodaje wykonanie punktu koñcowego do potoku ¿¹dañ
 //app.UseEndpoints(endpoints =>
 //{
 //    //w³¹czamy us³ugê wstrzykiwania zale¿noœci dla tras http

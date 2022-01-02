@@ -1,111 +1,192 @@
 ﻿++Solution 'Blogger' ‎(4 of 4 projects)
 i:{00000000-0000-0000-0000-000000000000}:Blogger.sln
-++src
-i:{00000000-0000-0000-0000-000000000000}:src
-++Infrastructure
-i:{03a077b8-1985-4177-b946-fe66381dc5a3}:Infrastructure
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\infrastructure\bin\debug\net6.0\infrastructure.dll
+++WebAPI
+i:{00000000-0000-0000-0000-000000000000}:WebAPI
+++Connected Services 
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:>2505
 ++Dependencies
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:>298
-i:{e9e81c69-55a3-4183-b827-c8a5f5ca106e}:>299
-i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:>300
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:>803
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:>2504
+i:{e9e81c69-55a3-4183-b827-c8a5f5ca106e}:>1493
+i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:>1492
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:>1393
+++Properties
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\properties\
+++Controllers
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\controllers\
+++Filters
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\filters\
+++Helpers
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\helpers\
+++Installers
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\installers\
+++Models
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\models\
+++Wrappers
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\wrappers\
+++appsettings.json
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\appsettings.json
+++Program.cs
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\program.cs
+++WebAPI.csproj.bak
+++No service dependencies discovered
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:>2506
 ++Analyzers
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:analyzers
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:analyzers
 i:{e9e81c69-55a3-4183-b827-c8a5f5ca106e}:analyzers
 i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:analyzers
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:analyzers
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:analyzers
 ++Frameworks
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:frameworks
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:frameworks
 i:{e9e81c69-55a3-4183-b827-c8a5f5ca106e}:frameworks
 i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:frameworks
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:frameworks
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:frameworks
 ++Packages
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:packages
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:packages
 i:{e9e81c69-55a3-4183-b827-c8a5f5ca106e}:packages
 i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:packages
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:packages
-++Humanizer.Core (2.13.14)
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:>836
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:>864
-++Microsoft.EntityFrameworkCore (6.0.1)
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:>831
-++Microsoft.EntityFrameworkCore.Design (6.0.1)
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:>834
-++Microsoft.EntityFrameworkCore.SqlServer (6.0.1)
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:>833
-++Microsoft.EntityFrameworkCore.Tools (6.0.1)
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:>837
-++Microsoft.Extensions.DependencyInjection.Abstractions (6.0.0)
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:>835
-i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:>830
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:packages
 ++Projects
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:projects
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:projects
 i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:projects
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:projects
-++Data
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\data\
-++Migrations
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\data\migrations\
-++20211216190259_CreatePostsTable.cs
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\data\migrations\20211216190259_createpoststable.cs
-++BloggerContextModelSnapshot.cs
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\data\migrations\bloggercontextmodelsnapshot.cs
-++BloggerContext.cs
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\data\bloggercontext.cs
-++ExtensionMethods
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\extensionmethods\
-++ExtensionMethods.cs
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\extensionmethods\extensionmethods.cs
-++Repositories
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\repositories\
-++CosmosPostRepository.cs
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\repositories\cosmospostrepository.cs
-++DapperRepository.cs
-++PostRepository.cs
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\repositories\postrepository.cs
-++DependencyInjection.cs
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\dependencyinjection.cs
-i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\dependencyinjection.cs
-++GlobalUsings.cs
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\globalusings.cs
-i:{e9e81c69-55a3-4183-b827-c8a5f5ca106e}:c:\users\piotr\source\repos\blogger\domain\globalusings.cs
-i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\globalusings.cs
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:projects
+++launchSettings.json
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\properties\launchsettings.json
+++V1
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\controllers\v1\
+++V2
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\controllers\v2\
+++V3
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\controllers\v3\
+++PaginationFilter.cs
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\filters\paginationfilter.cs
+++SortingFilter.cs
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\filters\sortingfilter.cs
+++PaginationHelper.cs
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\helpers\paginationhelper.cs
+++SortingHelper.cs
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\helpers\sortinghelper.cs
+++CosmosInstaller.cs
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\installers\cosmosinstaller.cs
+++DapperInstaller.cs
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\installers\dapperinstaller.cs
+++DbInstaller.cs
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\installers\dbinstaller.cs
+++FluentEmailInstaller.cs
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\installers\fluentemailinstaller.cs
+++IdentityInstaller.cs
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\installers\identityinstaller.cs
+++IInstaller.cs
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\installers\iinstaller.cs
+++InstallerExtension.cs
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\installers\installerextension.cs
+++MvcInstaller.cs
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\installers\mvcinstaller.cs
+++SwaggerInstaller.cs
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\installers\swaggerinstaller.cs
+++LoginModel.cs
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\models\loginmodel.cs
+++RegisterModel.cs
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\models\registermodel.cs
+++PagedResponse.cs
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\wrappers\pagedresponse.cs
+++Response.cs
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\wrappers\response.cs
+++appsettings.Development.json
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\appsettings.development.json
+++Microsoft.AspNetCore.Analyzers
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
+++Microsoft.AspNetCore.App.Analyzers
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
+i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
+++Microsoft.AspNetCore.App.CodeFixes
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
+i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
+++Microsoft.AspNetCore.Components.Analyzers
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
+++Microsoft.AspNetCore.Mvc.Analyzers
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
+++Microsoft.AspNetCore.Razor.Internal.SourceGenerator.Transport
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.razor\source-generators\microsoft.aspnetcore.razor.internal.sourcegenerator.transport.dll
+++Microsoft.CodeAnalysis.Analyzers
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\.nuget\packages\microsoft.codeanalysis.analyzers\3.3.2\analyzers\dotnet\cs\microsoft.codeanalysis.analyzers.dll
+i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\.nuget\packages\microsoft.codeanalysis.analyzers\3.3.2\analyzers\dotnet\cs\microsoft.codeanalysis.analyzers.dll
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\.nuget\packages\microsoft.codeanalysis.analyzers\3.3.2\analyzers\dotnet\cs\microsoft.codeanalysis.analyzers.dll
+++Microsoft.CodeAnalysis.CSharp.Analyzers
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\.nuget\packages\microsoft.codeanalysis.analyzers\3.3.2\analyzers\dotnet\cs\microsoft.codeanalysis.csharp.analyzers.dll
+i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\.nuget\packages\microsoft.codeanalysis.analyzers\3.3.2\analyzers\dotnet\cs\microsoft.codeanalysis.csharp.analyzers.dll
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\.nuget\packages\microsoft.codeanalysis.analyzers\3.3.2\analyzers\dotnet\cs\microsoft.codeanalysis.csharp.analyzers.dll
 ++Microsoft.CodeAnalysis.CSharp.NetAnalyzers
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
 i:{e9e81c69-55a3-4183-b827-c8a5f5ca106e}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
 i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
 ++Microsoft.CodeAnalysis.NetAnalyzers
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
 i:{e9e81c69-55a3-4183-b827-c8a5f5ca106e}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
 i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
 ++Microsoft.EntityFrameworkCore.Analyzers
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.1\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
 i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.1\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.1\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
 ++Microsoft.Extensions.Logging.Generators
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\.nuget\packages\microsoft.extensions.logging.abstractions\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+++Microsoft.NET.Sdk.Razor.SourceGenerators
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.razor\source-generators\microsoft.net.sdk.razor.sourcegenerators.dll
 ++System.Text.Json.SourceGeneration
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
 i:{e9e81c69-55a3-4183-b827-c8a5f5ca106e}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
 i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.0\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+++Microsoft.AspNetCore.App
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\microsoft.aspnetcore.app
 ++Microsoft.NETCore.App
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\microsoft.netcore.app
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\microsoft.netcore.app
 i:{e9e81c69-55a3-4183-b827-c8a5f5ca106e}:c:\users\piotr\source\repos\blogger\domain\microsoft.netcore.app
 i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\microsoft.netcore.app
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\microsoft.netcore.app
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\microsoft.netcore.app
+++Cosmonaut.Extensions.Microsoft.DependencyInjection (2.3.0)
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:>2560
+++FluentEmail.Razor (3.0.0)
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:>2564
+++FluentEmail.Smtp (3.0.0)
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:>2561
+++Humanizer.Core (2.13.14)
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:>2562
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:>2540
+++Microsoft.AspNetCore.Authentication.JwtBearer (6.0.1)
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:>2563
+++Microsoft.AspNetCore.Mvc.Versioning (5.0.0)
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:>2557
+++Microsoft.AspNetCore.OData (8.0.4)
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:>2565
+++OData.Swagger (1.0.0)
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:>2556
+++Swashbuckle.AspNetCore (6.2.3)
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:>2558
+++Swashbuckle.AspNetCore.Annotations (6.2.3)
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:>2559
 ++Application
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\application\bin\debug\net6.0\application.dll
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\application\application.csproj
 i:{03a077b8-1985-4177-b946-fe66381dc5a3}:Application
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\application\bin\debug\net6.0\application.dll
-++20211216190259_CreatePostsTable.Designer.cs
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\data\migrations\20211216190259_createpoststable.designer.cs
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\application\application.csproj
+++Infrastructure
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\infrastructure\infrastructure.csproj
+i:{03a077b8-1985-4177-b946-fe66381dc5a3}:Infrastructure
+++IdentityController.cs
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\controllers\v1\identitycontroller.cs
+++PostsController.cs
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\controllers\v1\postscontroller.cs
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\controllers\v2\postscontroller.cs
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\controllers\v3\postscontroller.cs
+++src
+i:{00000000-0000-0000-0000-000000000000}:src
 ++Domain
 i:{03a077b8-1985-4177-b946-fe66381dc5a3}:Domain
-i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\domain\bin\debug\net6.0\domain.dll
+i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\domain\domain.csproj
 ++Common
 i:{e9e81c69-55a3-4183-b827-c8a5f5ca106e}:c:\users\piotr\source\repos\blogger\domain\common\
 ++AuditableEntitiy.cs
@@ -117,6 +198,10 @@ i:{e9e81c69-55a3-4183-b827-c8a5f5ca106e}:c:\users\piotr\source\repos\blogger\dom
 i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\dto\cosmos\
 ++Post.cs
 i:{e9e81c69-55a3-4183-b827-c8a5f5ca106e}:c:\users\piotr\source\repos\blogger\domain\entities\post.cs
+++Enums
+i:{e9e81c69-55a3-4183-b827-c8a5f5ca106e}:c:\users\piotr\source\repos\blogger\domain\enums\
+++EmailTemplate.cs
+i:{e9e81c69-55a3-4183-b827-c8a5f5ca106e}:c:\users\piotr\source\repos\blogger\domain\enums\emailtemplate.cs
 ++Interfaces
 i:{e9e81c69-55a3-4183-b827-c8a5f5ca106e}:c:\users\piotr\source\repos\blogger\domain\interfaces\
 i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\interfaces\
@@ -126,12 +211,39 @@ i:{e9e81c69-55a3-4183-b827-c8a5f5ca106e}:c:\users\piotr\source\repos\blogger\dom
 i:{e9e81c69-55a3-4183-b827-c8a5f5ca106e}:c:\users\piotr\source\repos\blogger\domain\interfaces\idapperpostrepository.cs
 ++IPostRepository.cs
 i:{e9e81c69-55a3-4183-b827-c8a5f5ca106e}:c:\users\piotr\source\repos\blogger\domain\interfaces\ipostrepository.cs
+++GlobalUsings.cs
+i:{e9e81c69-55a3-4183-b827-c8a5f5ca106e}:c:\users\piotr\source\repos\blogger\domain\globalusings.cs
+i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\globalusings.cs
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\globalusings.cs
 ++CosmosPost.cs
 i:{e9e81c69-55a3-4183-b827-c8a5f5ca106e}:c:\users\piotr\source\repos\blogger\domain\entities\cosmos\cosmospost.cs
 ++Cosmonaut (2.11.3)
-i:{e9e81c69-55a3-4183-b827-c8a5f5ca106e}:>812
+i:{e9e81c69-55a3-4183-b827-c8a5f5ca106e}:>2513
 ++Dto
 i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\dto\
+++Mapping
+i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\mapping\
+++Services
+i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\services\
+++Emails
+i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\services\emails\
+++Templates
+i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\services\emails\templates\
+++WelcomeMessage.cshtml
+i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\services\emails\templates\welcomemessage.cshtml
+++EmailSenderService.cs
+i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\services\emails\emailsenderservice.cs
+++CosmosPostService.cs
+i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\services\cosmospostservice.cs
+++DapperPostService.cs
+i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\services\dapperpostservice.cs
+++PostService.cs
+i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\services\postservice.cs
+++UserResolverService.cs
+i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\services\userresolverservice.cs
+++DependencyInjection.cs
+i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\dependencyinjection.cs
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\dependencyinjection.cs
 ++CreatePostDto.cs
 i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\dto\createpostdto.cs
 ++PostDto.cs
@@ -140,339 +252,99 @@ i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\app
 i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\dto\updatepostdto.cs
 ++ICosmosPostService.cs
 i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\interfaces\icosmospostservice.cs
+++IDapperPostService.cs
+i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\interfaces\idapperpostservice.cs
+++IEmailSenderService.cs
+i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\interfaces\iemailsenderservice.cs
 ++IPostService.cs
 i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\interfaces\ipostservice.cs
-++Mapping
-i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\mapping\
-++Services
-i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\services\
-++CosmosPostService.cs
-i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\services\cosmospostservice.cs
-++PostService.cs
-i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\services\postservice.cs
+++IMap.cs
+i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\mapping\imap.cs
+++MappingProfile.cs
+i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\mapping\mappingprofile.cs
+++AutoMapper (10.1.1)
+i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:>2534
+++AutoMapper.Extensions.Microsoft.DependencyInjection (8.1.1)
+i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:>2529
+++FluentEmail.Core (3.0.0)
+i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:>2532
+++Microsoft.AspNetCore.Http.Abstractions (2.2.0)
+i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:>2536
+++Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation (6.0.1)
+i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:>2526
+++Microsoft.Extensions.DependencyInjection.Abstractions (6.0.0)
+i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:>2531
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:>2535
+++Microsoft.Extensions.Logging (6.0.0)
+i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:>2538
 ++CosmosPostDto.cs
 i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\dto\cosmos\cosmospostdto.cs
 ++CreateCosmosPostDto.cs
 i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\dto\cosmos\createcosmospostdto.cs
 ++UpdateCosmosPostDto.cs
 i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\dto\cosmos\updatecosmospostdto.cs
-++IMap.cs
-i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\mapping\imap.cs
-++MappingProfile.cs
-i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\mapping\mappingprofile.cs
-++AutoMapper (10.1.1)
-i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:>832
-++AutoMapper.Extensions.Microsoft.DependencyInjection (8.1.1)
-i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:>827
-++WebAPI
-i:{03a077b8-1985-4177-b946-fe66381dc5a3}:WebAPI
-++Connected Services 
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:>804
-++Properties
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\properties\
-++launchSettings.json
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\properties\launchsettings.json
-++wwwroot
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\
-++Controllers
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\controllers\
-++V1
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\controllers\v1\
-++PostsController.cs
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\controllers\v1\postscontroller.cs
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\controllers\v2\postscontroller.cs
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\controllers\v3\postscontroller.cs
-++V2
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\controllers\v2\
-++Filters
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\filters\
-++Helpers
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\helpers\
-++Installers
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\installers\
-++CosmosInstaller.cs
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\installers\cosmosinstaller.cs
-++DapperInstaller.cs
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\installers\dapperinstaller.cs
-++DbInstaller.cs
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\installers\dbinstaller.cs
-++IInstaller.cs
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\installers\iinstaller.cs
-++InstallerExtension.cs
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\installers\installerextension.cs
-++MvcInstaller.cs
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\installers\mvcinstaller.cs
-++SwaggerInstaller.cs
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\installers\swaggerinstaller.cs
-++Pages
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\pages\
-++Wrappers
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wrappers\
-++appsettings.json
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\appsettings.json
-++Program.cs
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\program.cs
-++No service dependencies discovered
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:>805
-++css
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\css\
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\
-++js
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\js\
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\js\
-++lib
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\
-++favicon.ico
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\favicon.ico
-++PaginationFilter.cs
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\filters\paginationfilter.cs
-++SortingFilter.cs
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\filters\sortingfilter.cs
-++PaginationHelper.cs
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\helpers\paginationhelper.cs
-++SortingHelper.cs
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\helpers\sortinghelper.cs
-++Shared
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\pages\shared\
-++_ViewImports.cshtml
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\pages\_viewimports.cshtml
-++_ViewStart.cshtml
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\pages\_viewstart.cshtml
-++Error.cshtml
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\pages\error.cshtml
-++Index.cshtml
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\pages\index.cshtml
-++Privacy.cshtml
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\pages\privacy.cshtml
-++PagedResponse.cs
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wrappers\pagedresponse.cs
-++Response.cs
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wrappers\response.cs
-++appsettings.Development.json
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\appsettings.development.json
-++Microsoft.AspNetCore.Analyzers
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
-++Microsoft.AspNetCore.App.Analyzers
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
-++Microsoft.AspNetCore.App.CodeFixes
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.0\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
-++Microsoft.AspNetCore.Components.Analyzers
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
-++Microsoft.AspNetCore.Mvc.Analyzers
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
-++Microsoft.AspNetCore.Razor.Internal.SourceGenerator.Transport
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.razor\source-generators\microsoft.aspnetcore.razor.internal.sourcegenerator.transport.dll
-++Microsoft.NET.Sdk.Razor.SourceGenerators
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk.razor\source-generators\microsoft.net.sdk.razor.sourcegenerators.dll
-++Microsoft.AspNetCore.App
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\microsoft.aspnetcore.app
-++Cosmonaut.Extensions.Microsoft.DependencyInjection (2.3.0)
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:>863
-++Microsoft.AspNetCore.Mvc.Versioning (5.0.0)
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:>860
-++Microsoft.AspNetCore.OData (8.0.4)
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:>865
-++OData.Swagger (1.0.0)
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:>859
-++Swashbuckle.AspNetCore (6.2.3)
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:>861
-++Swashbuckle.AspNetCore.Annotations (6.2.3)
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:>862
-++site.css
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\css\site.css
-++site.js
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\js\site.js
-++bootstrap
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\
-++jquery
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\jquery\
-++jquery-validation
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\jquery-validation\
-++jquery-validation-unobtrusive
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\jquery-validation-unobtrusive\
-++_Layout.cshtml
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\pages\shared\_layout.cshtml
-++_ValidationScriptsPartial.cshtml
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\pages\shared\_validationscriptspartial.cshtml
-++Error.cshtml.cs
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\pages\error.cshtml.cs
-++Index.cshtml.cs
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\pages\index.cshtml.cs
-++Privacy.cshtml.cs
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\pages\privacy.cshtml.cs
-++dist
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\jquery\dist\
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\jquery-validation\dist\
-++LICENSE
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\license
-++LICENSE.txt
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\jquery\license.txt
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\jquery-validation-unobtrusive\license.txt
-++LICENSE.md
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\jquery-validation\license.md
-++jquery.validate.unobtrusive.js
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js
-++_Layout.cshtml.css
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\pages\shared\_layout.cshtml.css
-++jquery.js
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\jquery\dist\jquery.js
-++additional-methods.js
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\jquery-validation\dist\additional-methods.js
-++jquery.validate.js
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\jquery-validation\dist\jquery.validate.js
-++jquery.validate.unobtrusive.min.js
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
-++bootstrap.css
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\bootstrap.css
-++bootstrap-grid.css
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
-++bootstrap-reboot.css
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
-++bootstrap-utilities.css
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
-++bootstrap.js
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\js\bootstrap.js
-++jquery.min.js
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\jquery\dist\jquery.min.js
-++additional-methods.min.js
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\jquery-validation\dist\additional-methods.min.js
-++jquery.validate.min.js
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
-++bootstrap.css.map
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
-++bootstrap.min.css
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
-++bootstrap.rtl.css
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
-++bootstrap-grid.css.map
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
-++bootstrap-grid.min.css
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
-++bootstrap-grid.rtl.css
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
-++bootstrap-reboot.css.map
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
-++bootstrap-reboot.min.css
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
-++bootstrap-reboot.rtl.css
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
-++bootstrap-utilities.css.map
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
-++bootstrap-utilities.min.css
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
-++bootstrap-utilities.rtl.css
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
-++bootstrap.bundle.js
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
-++bootstrap.esm.js
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
-++bootstrap.js.map
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
-++bootstrap.min.js
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
-++jquery.min.map
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\jquery\dist\jquery.min.map
-++bootstrap.min.css.map
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
-++bootstrap.rtl.css.map
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
-++bootstrap.rtl.min.css
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
-++bootstrap-grid.min.css.map
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
-++bootstrap-grid.rtl.css.map
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
-++bootstrap-grid.rtl.min.css
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
-++bootstrap-reboot.min.css.map
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
-++bootstrap-reboot.rtl.css.map
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
-++bootstrap-reboot.rtl.min.css
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
-++bootstrap-utilities.min.css.map
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
-++bootstrap-utilities.rtl.css.map
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
-++bootstrap-utilities.rtl.min.css
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
-++bootstrap.bundle.js.map
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
-++bootstrap.bundle.min.js
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
-++bootstrap.esm.js.map
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
-++bootstrap.esm.min.js
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
-++bootstrap.min.js.map
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
-++bootstrap.rtl.min.css.map
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
-++bootstrap-grid.rtl.min.css.map
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
-++bootstrap-reboot.rtl.min.css.map
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
-++bootstrap-utilities.rtl.min.css.map
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
-++bootstrap.bundle.min.js.map
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
-++bootstrap.esm.min.js.map
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
-++BloggerContext - Copy.cs
-++DapperBloggerContext.cs
-++DapperPostRepository.cs
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\repositories\dapperpostrepository.cs
-++Dapper (2.0.123)
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:>886
-++DbInstaller - Copy.cs
-++NewFolder
-++Dapper
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\data\dapper\
-++BloggerContext - Copy - Copy.cs
-++DapperContext.cs
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\data\dapper\dappercontext.cs
-++IDapperContext.cs
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\data\dapper\idappercontext.cs
-++PostService - Copy.cs
-++DapperPostService.cs
-i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\services\dapperpostservice.cs
-++IPostService - Copy.cs
-++IDapperPostService.cs
-i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\interfaces\idapperpostservice.cs
-++V2 - Copy
-++V3
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\controllers\v3\
-++Microsoft.AspNetCore.Authentication.JwtBearer (6.0.1)
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:>919
-++DapperInstaller - Copy.cs
-++IdentityInstaller.cs
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\installers\identityinstaller.cs
-++Microsoft.AspNetCore.Identity (2.2.0)
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:>923
-++Microsoft.AspNetCore.Identity.EntityFrameworkCore (6.0.1)
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:>924
+++Data
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\data\
+++ExtensionMethods
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\extensionmethods\
+++ExtensionMethods.cs
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\extensionmethods\extensionmethods.cs
 ++Identity
 i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\identity\
 ++ApplicationUser.cs
 i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\identity\applicationuser.cs
+++UserRoles.cs
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\identity\userroles.cs
+++Repositories
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\repositories\
+++CosmosPostRepository.cs
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\repositories\cosmospostrepository.cs
+++DapperPostRepository.cs
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\repositories\dapperpostrepository.cs
+++PostRepository.cs
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\repositories\postrepository.cs
+++Dapper
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\data\dapper\
+++Migrations
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\data\migrations\
+++BloggerContext.cs
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\data\bloggercontext.cs
+++Dapper (2.0.123)
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:>2537
+++Microsoft.AspNetCore.Identity (2.2.0)
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:>2533
+++Microsoft.AspNetCore.Identity.EntityFrameworkCore (6.0.1)
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:>2539
+++Microsoft.EntityFrameworkCore (6.0.1)
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:>2527
+++Microsoft.EntityFrameworkCore.Design (6.0.1)
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:>2530
+++Microsoft.EntityFrameworkCore.SqlServer (6.0.1)
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:>2528
+++Microsoft.EntityFrameworkCore.Tools (6.0.1)
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:>2541
+++DapperContext.cs
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\data\dapper\dappercontext.cs
+++IDapperContext.cs
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\data\dapper\idappercontext.cs
+++20211216190259_CreatePostsTable.cs
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\data\migrations\20211216190259_createpoststable.cs
 ++20211221212628_AddIdentityTables.cs
 i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\data\migrations\20211221212628_addidentitytables.cs
-++20211221212628_AddIdentityTables.Designer.cs
-i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\data\migrations\20211221212628_addidentitytables.designer.cs
-++IdentityController.cs
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\controllers\v1\identitycontroller.cs
-++Models
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\models\
-++RegisterModel.cs
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\models\registermodel.cs
-++LoginModel.cs
-i:{ba3896cc-4759-4ac0-9dc7-eae66f6b5c3c}:c:\users\piotr\source\repos\blogger\webapi\models\loginmodel.cs
 ++20211222192103_AddColumnUserId.cs
 i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\data\migrations\20211222192103_addcolumnuserid.cs
+++BloggerContextModelSnapshot.cs
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\data\migrations\bloggercontextmodelsnapshot.cs
+++20211216190259_CreatePostsTable.Designer.cs
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\data\migrations\20211216190259_createpoststable.designer.cs
+++20211221212628_AddIdentityTables.Designer.cs
+i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\data\migrations\20211221212628_addidentitytables.designer.cs
 ++20211222192103_AddColumnUserId.Designer.cs
 i:{6d7a0d1c-754c-4dec-bc5e-3f6d69def3ac}:c:\users\piotr\source\repos\blogger\infrastructure\data\migrations\20211222192103_addcolumnuserid.designer.cs
-++UserResolverService.cs
-i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:c:\users\piotr\source\repos\blogger\application\services\userresolverservice.cs
-++Microsoft.AspNetCore.Http.Abstractions (2.2.0)
-i:{d5d219b8-0b07-4f14-91f7-2f65a81269d3}:>1259
+++NewFolder
+++Middlewears
+++Middlewares
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\middlewares\
+++Middelwares
+++ErrorHandlingMiddleware.cs
+i:{c1aa7aa7-2201-4dee-9b43-c652ee9d4347}:c:\users\piotr\source\repos\blogger\webapi\middlewares\errorhandlingmiddleware.cs

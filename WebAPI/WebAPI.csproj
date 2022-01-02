@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="WebAPI.csproj.bak" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Cosmonaut.Extensions.Microsoft.DependencyInjection" Version="2.3.0" />
     <PackageReference Include="FluentEmail.Razor" Version="3.0.0" />
     <PackageReference Include="FluentEmail.Smtp" Version="3.0.0" />
