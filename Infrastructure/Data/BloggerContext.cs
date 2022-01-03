@@ -18,6 +18,7 @@ namespace Infrastructure.Data
                 userService ?? throw new ArgumentNullException(nameof(userService));
         }
         public DbSet<Post> Posts { get; set; }
+        public DbSet<Picture> Pictures { get; set; }
 
         public async Task<int> SaveChangesAsync()
         {

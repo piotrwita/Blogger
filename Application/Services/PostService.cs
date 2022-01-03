@@ -1,4 +1,5 @@
-﻿using Domain.Interfaces;
+﻿using Application.Dto.Post;
+using Domain.Interfaces;
 
 namespace Application.Services
 {

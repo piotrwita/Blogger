@@ -1,4 +1,6 @@
-﻿namespace Application.Interfaces
+﻿using Application.Dto.Post;
+
+namespace Application.Interfaces
 {
     public interface IPostService
     {

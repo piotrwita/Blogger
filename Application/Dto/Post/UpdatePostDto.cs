@@ -1,4 +1,4 @@
-﻿namespace Application.Dto
+﻿namespace Application.Dto.Post
 {
     public class UpdatePostDto : IMap
     {
@@ -7,7 +7,7 @@
 
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<UpdatePostDto, Post>();
+            profile.CreateMap<UpdatePostDto, Domain.Entities.Post>();
         }
     }
 }

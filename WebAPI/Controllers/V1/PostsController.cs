@@ -1,4 +1,5 @@
 ﻿using Application.Dto;
+using Application.Dto.Post;
 using Application.Interfaces;
 using Infrastructure.Identity;
 using Microsoft.AspNetCore.Authorization;
@@ -79,7 +80,9 @@ namespace WebAPI.Controllers.V1
             if (post == null)
                 return NotFound();
 
-            return Ok(new Response<PostDto>(post));
+            var respone = new Response<PostDto>(post);
+
+            return Ok(respone);
         }
 
         [SwaggerOperation(Summary = "Create a new post")]
@@ -87,8 +90,13 @@ namespace WebAPI.Controllers.V1
         [HttpPost]
         public async Task<IActionResult> Create(CreatePostDto newPost)
         {
-            var post = await _postService.AddNewPostAsync(newPost, User.FindFirstValue(ClaimTypes.NameIdentifier));
-            return Created($"api/posts/{post.Id}", new Response<PostDto>(post));
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var post = await _postService.AddNewPostAsync(newPost, userId);
+
+            var response = new Response<PostDto>(post);
+
+            return Created($"api/posts/{post.Id}", response);
         }
 
         [SwaggerOperation(Summary = "Update a existing post")]
@@ -96,7 +104,8 @@ namespace WebAPI.Controllers.V1
         [HttpPut]
         public async Task<IActionResult> Update(UpdatePostDto updatePost)
         {
-            var userOwnPost = await _postService.UserOwnPostAsync(updatePost.Id, User.FindFirstValue(ClaimTypes.NameIdentifier));
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var userOwnPost = await _postService.UserOwnPostAsync(updatePost.Id, userId);
             var isSuperUser = User.FindFirstValue(ClaimTypes.Role).Contains(UserRoles.SuperUser);
 
             if (!userOwnPost && !isSuperUser)
@@ -118,7 +127,8 @@ namespace WebAPI.Controllers.V1
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var userOwnPost = await _postService.UserOwnPostAsync(id, User.FindFirstValue(ClaimTypes.NameIdentifier));
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var userOwnPost = await _postService.UserOwnPostAsync(id, userId);
             var isAdmin = User.FindFirstValue(ClaimTypes.Role).Contains(UserRoles.Admin);
             var isSuperUser = User.FindFirstValue(ClaimTypes.Role).Contains(UserRoles.SuperUser);
 

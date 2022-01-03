@@ -1,4 +1,5 @@
-﻿using Application.Services;
+﻿using Application.Interfaces;
+using Application.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Application
@@ -10,6 +11,7 @@ namespace Application
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
             services.AddScoped<IPostService, PostService>();
+            services.AddScoped<IPictureService, PictureService>();
             services.AddScoped<ICosmosPostService, CosmosPostService>();
 
             return services;

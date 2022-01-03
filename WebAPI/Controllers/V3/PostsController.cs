@@ -1,5 +1,4 @@
-﻿using Application.Dto;
-using Application.Dto.Cosmos;
+﻿using Application.Dto.Post;
 using Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;

@@ -21,6 +21,8 @@
         [MaxLength(450)]
         public string UserId { get; set; }
 
+        public ICollection<Picture> Pictures { get; set; }
+
         #region Constructors
 
         public Post()

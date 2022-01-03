@@ -76,6 +76,7 @@ namespace Infrastructure.Repositories
         {
             _context.Posts.Remove(post);
             await _context.SaveChangesAsync();
+            await Task.CompletedTask;
         }
 
         #endregion

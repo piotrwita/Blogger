@@ -10,8 +10,9 @@
         public T Data { get; set; }
         public IEnumerable<string> Errors { get; set; }
 
+        #region Contructors
         public Response()
-        {
+        { 
         }
 
         public Response(T data)
@@ -21,6 +22,7 @@
 
             Succeeded = true;
         }
+        #endregion
     }
 
     /// <summary>

@@ -1,4 +1,4 @@
-﻿namespace Application.Dto
+﻿namespace Application.Dto.Post
 {
     public class PostDto : IMap
     {
@@ -10,7 +10,7 @@
 
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<Post, PostDto>()
+            profile.CreateMap<Domain.Entities.Post, PostDto>()
                 .ForMember(dest => dest.CreationDate, opt => opt.MapFrom(src => src.Created));
         }
     }
