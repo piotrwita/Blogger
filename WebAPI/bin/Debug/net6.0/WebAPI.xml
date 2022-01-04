@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebAPI</name>
+    </assembly>
+    <members>
+        <member name="T:WebAPI.Attributes.ValidateFilterAttribute">
+            <summary>
+            odpowiednie sformatowanie odpowiedzi wynikającej z walidacji z wykorzystaniem klasy Response
+            </summary>
+        </member>
+        <member name="F:WebAPI.Controllers.V1.IdentityController._userManager">
+            <summary>
+            Pozwala zarządzać użytkownikami , wyszukiwać , dodawać
+            </summary>
+        </member>
+        <member name="F:WebAPI.Controllers.V1.IdentityController._roleManager">
+            <summary>
+            Pozwala zarządzać rolami użytkowników   
+            </summary>
+        </member>
+        <member name="F:WebAPI.Controllers.V1.IdentityController._configuration">
+            <summary>
+            Pozwala pobrać opcje konfiguracji z pliku appsettingss.json
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.V1.IdentityController.RegisterAsync(WebAPI.Models.RegisterModel)">
+            <summary>
+            Register the user in the system
+            </summary>
+            <response code="200">User created successfully</response>
+            <response code="500">User already exists</response>
+        </member>
+        <member name="M:WebAPI.Controllers.V1.IdentityController.RegisterAdminAsync(WebAPI.Models.RegisterModel)">
+            <summary>
+            Register the admin in the system
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.V1.IdentityController.RegisterSuperUserAsync(WebAPI.Models.RegisterModel)">
+            <summary>
+            Register the super user in the system
+            </summary>
+        </member>
+        <member name="M:WebAPI.Controllers.V1.IdentityController.LoginAsync(WebAPI.Models.LoginModel)">
+            <summary>
+            Logs the user into system
+            </summary>
+        </member>
+        <member name="T:WebAPI.Helpers.SortFields">
+            <summary>
+            Pomocnicza klasa określająca po których polach można dokonać sortowania 
+            przy okazji właściwości będą mapowały nazwę pola przesyłaną od klienta na nazwę pola wykorzystywaną w sortowaniu
+            </summary>
+        </member>
+        <member name="T:WebAPI.SwaggerExamples.Requests.RegisterModelExample">
+            <summary>
+            zwraca przykladowe cialo żądania ktore zostanie wyswietlone w swaggerze
+            </summary>
+        </member>
+        <member name="P:WebAPI.Wrappers.PagedResponse`1.PageNumber">
+            <summary>
+            Właściwość określa numer strony
+            </summary>
+        </member>
+        <member name="P:WebAPI.Wrappers.PagedResponse`1.PageSize">
+            <summary>
+            Właściwość określa rozmiar strony
+            </summary>
+        </member>
+        <member name="P:WebAPI.Wrappers.PagedResponse`1.TotalPages">
+            <summary>
+            Właściwość określa liczbę wszystkich stron
+            </summary>
+        </member>
+        <member name="P:WebAPI.Wrappers.PagedResponse`1.TotalRecords">
+            <summary>
+            Właściwość określa liczbę wszystkich rekordów
+            </summary>
+        </member>
+        <member name="P:WebAPI.Wrappers.PagedResponse`1.NextPage">
+            <summary>
+            Właściwość określa czy następna strona istnieje
+            </summary>
+        </member>
+        <member name="P:WebAPI.Wrappers.PagedResponse`1.PreviousPage">
+            <summary>
+            Właściwość określa czy poprzednia strona istnieje
+            </summary>
+        </member>
+        <member name="T:WebAPI.Wrappers.Response`1">
+            <summary>
+            Klasa generyczna - można wykorzystać do przesyłania rezultatu niezależnie od zwracanego typu
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:WebAPI.Wrappers.Response">
+            <summary>
+            Przechwuje informację czy sukces i ew komunikat błędu
+            </summary>
+        </member>
+    </members>
+</doc>

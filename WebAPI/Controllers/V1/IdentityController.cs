@@ -8,6 +8,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using WebAPI.Models;
+using WebAPI.SwaggerExamples.Responses;
 using WebAPI.Wrappers;
 
 namespace WebAPI.Controllers.V1
@@ -52,6 +53,14 @@ namespace WebAPI.Controllers.V1
                 emailSenderService ?? throw new ArgumentException(nameof(emailSenderService));
         }
 
+        /// <summary>
+        /// Register the user in the system
+        /// </summary>
+        /// <response code="200">User created successfully</response>
+        /// <response code="500">User already exists</response>
+        //informuje framework aspnetcore dla ktorego statusu utworzyc ktora przykladowa odpowiedz
+        [ProducesResponseType(typeof(RegisterResponseStatus200), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(RegisterResponseStatus500), StatusCodes.Status500InternalServerError)]
         [HttpPost]
         [Route("Register")]
         public async Task<IActionResult> RegisterAsync(RegisterModel register)
@@ -60,7 +69,7 @@ namespace WebAPI.Controllers.V1
 
             if (userExists != null)
             {
-                var responseError = new Response<bool>
+                var responseError = new Response
                 {
                     Succeeded = false,
                     Message = "User already exists"
@@ -102,7 +111,7 @@ namespace WebAPI.Controllers.V1
 
             await _emailSenderService.Send(user.Email, "Registration confirmation", EmailTemplate.WelcomeMessage, user);
 
-            var response = new Response<bool>
+            var response = new Response
             {
                 Succeeded = true,
                 Message = "User created successfully"
@@ -111,6 +120,9 @@ namespace WebAPI.Controllers.V1
             return Ok(response);
         }
 
+        /// <summary>
+        /// Register the admin in the system
+        /// </summary>
         [HttpPost]
         [Route("RegisterAdmin")]
         public async Task<IActionResult> RegisterAdminAsync(RegisterModel register)
@@ -119,7 +131,7 @@ namespace WebAPI.Controllers.V1
 
             if (userExists != null)
             {
-                var responseError = new Response<bool>
+                var responseError = new Response
                 {
                     Succeeded = false,
                     Message = "User already exists"
@@ -159,7 +171,7 @@ namespace WebAPI.Controllers.V1
 
             await _userManager.AddToRoleAsync(user, UserRoles.Admin);
 
-            var response = new Response<bool>
+            var response = new Response
             {
                 Succeeded = true,
                 Message = "User created successfully"
@@ -168,6 +180,9 @@ namespace WebAPI.Controllers.V1
             return Ok(response);
         }
 
+        /// <summary>
+        /// Register the super user in the system
+        /// </summary>
         [HttpPost]
         [Route("RegisterSuperUser")]
         public async Task<IActionResult> RegisterSuperUserAsync(RegisterModel register)
@@ -176,7 +191,7 @@ namespace WebAPI.Controllers.V1
 
             if (userExists != null)
             {
-                var responseError = new Response<bool>
+                var responseError = new Response
                 {
                     Succeeded = false,
                     Message = "User already exists"
@@ -216,7 +231,7 @@ namespace WebAPI.Controllers.V1
 
             await _userManager.AddToRoleAsync(user, UserRoles.SuperUser);
 
-            var response = new Response<bool>
+            var response = new Response
             {
                 Succeeded = true,
                 Message = "User created successfully"
@@ -225,6 +240,9 @@ namespace WebAPI.Controllers.V1
             return Ok(response);
         }
 
+        /// <summary>
+        /// Logs the user into system
+        /// </summary>
         [HttpPost]
         [Route("Login")]
         public async Task<IActionResult> LoginAsync(LoginModel login)
