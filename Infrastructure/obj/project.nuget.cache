@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "MqKgnc3+jnBR/JeqV/vbXl2Q4ZaOpYac5Z70X/V8KGK7Lyu0gmpH1dMpVmAWeVeSnCjgVpg6v90z/KS6rYgTdQ==",
+  "dgSpecHash": "4tC1hgu2uNfxxgli5PzrKTY61fwHJLM+wbVXaRbID6d7Cih+56sJYlwWEyncPeDP/jQivu6PxZExC4AIu+yEcg==",
   "success": true,
   "projectFilePath": "C:\\Users\\piotr\\source\\repos\\Blogger\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,9 @@
     "C:\\Users\\piotr\\.nuget\\packages\\cosmonaut\\2.11.3\\cosmonaut.2.11.3.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\fluentemail.core\\3.0.0\\fluentemail.core.3.0.0.nupkg.sha512",
+    "C:\\Users\\piotr\\.nuget\\packages\\fluentvalidation\\10.3.6\\fluentvalidation.10.3.6.nupkg.sha512",
+    "C:\\Users\\piotr\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.3.6\\fluentvalidation.aspnetcore.10.3.6.nupkg.sha512",
+    "C:\\Users\\piotr\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.3.6\\fluentvalidation.dependencyinjectionextensions.10.3.6.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\humanizer.core\\2.13.14\\humanizer.core.2.13.14.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\humanizer.core.uk\\2.5.16\\humanizer.core.uk.2.5.16.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

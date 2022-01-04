@@ -410,3 +410,6 @@ C:\Users\piotr\source\repos\Blogger\WebAPI\obj\Debug\net6.0\WebAPI.dll
 C:\Users\piotr\source\repos\Blogger\WebAPI\obj\Debug\net6.0\ref\WebAPI.dll
 C:\Users\piotr\source\repos\Blogger\WebAPI\obj\Debug\net6.0\WebAPI.pdb
 C:\Users\piotr\source\repos\Blogger\WebAPI\obj\Debug\net6.0\WebAPI.genruntimeconfig.cache
+C:\Users\piotr\source\repos\Blogger\WebAPI\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\piotr\source\repos\Blogger\WebAPI\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\Users\piotr\source\repos\Blogger\WebAPI\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll

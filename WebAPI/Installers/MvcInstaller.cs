@@ -1,5 +1,7 @@
 ﻿using Application;
 using Application.Services;
+using Application.Validators;
+using FluentValidation.AspNetCore;
 using Infrastructure;
 //using Microsoft.AspNet.OData.Extensions;
 using Microsoft.AspNetCore.Mvc.Versioning;
@@ -15,6 +17,12 @@ namespace WebAPI.Installers
             services.AddInfrastructure();
 
             services.AddControllers()
+                .AddFluentValidation(options =>
+                {
+                    //automatycznie zarejestruje wszystkie walidatory z projektu w ktorym znajduje sie wskazany typ
+                    //co za tym idzie wywołane w momencie wystapienia walidacji danych okreslonego typu
+                    options.RegisterValidatorsFromAssemblyContaining<CreatePostDtoValidatior>();
+                })
                 .AddJsonOptions(options =>
                 {
                     //konfiguracja pozwala wyświetlać w przeglądarce wynik w bardziej czytelny sposób

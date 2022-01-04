@@ -11,6 +11,7 @@
         //wymagalność danych
         [Required]
         [MaxLength(100)]
+        [MinLength(5)]
         public string Title { get; set; }
 
         [Required]

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "UamrVhDfiGiiDDukXvhmIU4Ls+guTywvKPsVLejMyH8SxdvTCqwUXvXKnTrtNDSLftnj/YWWi6j95Jm2e2Iztw==",
+  "dgSpecHash": "WrKr/K+n0aVEtMtmhtDBL+NsCU/ucdsZCVOcvu696VrfzMQNQIfJLiSotNdcOFr6gJk2Ofm8HKxtfBObsEH2Mg==",
   "success": true,
   "projectFilePath": "C:\\Users\\piotr\\source\\repos\\Blogger\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,9 @@
     "C:\\Users\\piotr\\.nuget\\packages\\fluentemail.core\\3.0.0\\fluentemail.core.3.0.0.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\fluentemail.razor\\3.0.0\\fluentemail.razor.3.0.0.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\fluentemail.smtp\\3.0.0\\fluentemail.smtp.3.0.0.nupkg.sha512",
+    "C:\\Users\\piotr\\.nuget\\packages\\fluentvalidation\\10.3.6\\fluentvalidation.10.3.6.nupkg.sha512",
+    "C:\\Users\\piotr\\.nuget\\packages\\fluentvalidation.aspnetcore\\10.3.6\\fluentvalidation.aspnetcore.10.3.6.nupkg.sha512",
+    "C:\\Users\\piotr\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.3.6\\fluentvalidation.dependencyinjectionextensions.10.3.6.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\humanizer.core\\2.13.14\\humanizer.core.2.13.14.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\humanizer.core.uk\\2.5.16\\humanizer.core.uk.2.5.16.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
