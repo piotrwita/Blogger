@@ -42,7 +42,7 @@ namespace WebAPI.Controllers.V1
         [SwaggerOperation(Summary = "Retrieves all posts")]
         [AllowAnonymous]
         [HttpGet]
-        public async Task<IActionResult> Get([FromQuery] /*Wartość parametru zostanie pobrana z ciągu zapytania*/ PaginationFilter paginationFilter,
+        public async Task<IActionResult> GetAsync([FromQuery] /*Wartość parametru zostanie pobrana z ciągu zapytania*/ PaginationFilter paginationFilter,
                                                     [FromQuery] SortingFilter sortingFilter,
                                                     [FromQuery] string filterBy = "")
         {
@@ -73,7 +73,7 @@ namespace WebAPI.Controllers.V1
         [SwaggerOperation(Summary = "Retrieves a specyfic post by unique id")]
         [AllowAnonymous]
         [HttpGet("{id}")]
-        public async Task<IActionResult> Get(int id)
+        public async Task<IActionResult> GetAsync(int id)
         {
             var post = await _postService.GetPostByIdAsync(id);
 
@@ -88,7 +88,7 @@ namespace WebAPI.Controllers.V1
         [SwaggerOperation(Summary = "Create a new post")]
         [Authorize(Roles = UserRoles.User + "," + UserRoles.SuperUser)]
         [HttpPost]
-        public async Task<IActionResult> Create(CreatePostDto newPost)
+        public async Task<IActionResult> CreateAsync(CreatePostDto newPost)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
@@ -102,7 +102,7 @@ namespace WebAPI.Controllers.V1
         [SwaggerOperation(Summary = "Update a existing post")]
         [Authorize(Roles = UserRoles.User + "," + UserRoles.SuperUser)]
         [HttpPut]
-        public async Task<IActionResult> Update(UpdatePostDto updatePost)
+        public async Task<IActionResult> UpdateAsync(UpdatePostDto updatePost)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var userOwnPost = await _postService.UserOwnPostAsync(updatePost.Id, userId);
@@ -125,7 +125,7 @@ namespace WebAPI.Controllers.V1
         [SwaggerOperation(Summary = "Delete a specyfic post")]
         [Authorize(Roles = UserRoles.AdminOrUser + "," + UserRoles.SuperUser)]
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> DeleteAsync(int id)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var userOwnPost = await _postService.UserOwnPostAsync(id, userId);

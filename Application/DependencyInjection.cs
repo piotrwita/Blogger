@@ -12,6 +12,7 @@ namespace Application
 
             services.AddScoped<IPostService, PostService>();
             services.AddScoped<IPictureService, PictureService>();
+            services.AddScoped<IAttachmentService, AttachmentService>();
             services.AddScoped<ICosmosPostService, CosmosPostService>();
 
             return services;

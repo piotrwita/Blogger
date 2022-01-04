@@ -54,7 +54,7 @@ namespace WebAPI.Controllers.V1
 
         [HttpPost]
         [Route("Register")]
-        public async Task<IActionResult> Register(RegisterModel register)
+        public async Task<IActionResult> RegisterAsync(RegisterModel register)
         {
             var userExists = await _userManager.FindByNameAsync(register.UserName);
 
@@ -113,7 +113,7 @@ namespace WebAPI.Controllers.V1
 
         [HttpPost]
         [Route("RegisterAdmin")]
-        public async Task<IActionResult> RegisterAdmin(RegisterModel register)
+        public async Task<IActionResult> RegisterAdminAsync(RegisterModel register)
         {
             var userExists = await _userManager.FindByNameAsync(register.UserName);
 
@@ -170,7 +170,7 @@ namespace WebAPI.Controllers.V1
 
         [HttpPost]
         [Route("RegisterSuperUser")]
-        public async Task<IActionResult> RegisterSuperUser(RegisterModel register)
+        public async Task<IActionResult> RegisterSuperUserAsync(RegisterModel register)
         {
             var userExists = await _userManager.FindByNameAsync(register.UserName);
 
@@ -227,7 +227,7 @@ namespace WebAPI.Controllers.V1
 
         [HttpPost]
         [Route("Login")]
-        public async Task<IActionResult> Login(LoginModel login)
+        public async Task<IActionResult> LoginAsync(LoginModel login)
         {
             var user = await _userManager.FindByNameAsync(login.UserName);
 

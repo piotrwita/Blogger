@@ -1,9 +1,10 @@
-﻿using Application.Dto.Picture;
+﻿using Application.Dto.Attachment;
 using Application.Interfaces;
 using Infrastructure.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
+using System.Net.Mime;
 using System.Security.Claims;
 using WebAPI.Wrappers;
 
@@ -13,49 +14,62 @@ namespace WebAPI.Controllers.V1
     [Route("api/[controller]")]
     [Authorize(Roles = UserRoles.User)]
     [ApiController]
-    public class PicturesController : Controller
+    public class AttachmentsController : Controller
     {
-        private readonly IPictureService _pictureService;
+        private readonly IAttachmentService _attachmentService;
         private readonly IPostService _postService;
-        public PicturesController(IPictureService pictureService,
+        public AttachmentsController(IAttachmentService attachmentService,
                            IPostService postService)
         {
-            _pictureService =
-                pictureService ?? throw new ArgumentNullException(nameof(pictureService));
+            _attachmentService =
+                attachmentService ?? throw new ArgumentNullException(nameof(attachmentService));
 
             _postService =
                 postService ?? throw new ArgumentNullException(nameof(postService));
         }
 
-        [SwaggerOperation(Summary = "Retrieves a pictures by unique post id")]
+        [SwaggerOperation(Summary = "Retrieves a attachments by unique post id")]
         [HttpGet("[action]/{postId}")]
         public async Task<IActionResult> GetPostIdAsync(int postId)
         {
-            var pictures = await _pictureService.GetPituresByPostIdAsync(postId);
+            var attachments = await _attachmentService.GetAttachmentsByPostIdAsync(postId);
 
-            var response = new Response<IEnumerable<PictureDto>>(pictures);
+            var response = new Response<IEnumerable<AttachmentDto>>(attachments);
 
             return Ok(response);
         }
 
-        [SwaggerOperation(Summary = "Retrieves a specyfic picture by unique id")]
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetAsync(int id)
+        [SwaggerOperation(Summary = "Download a specyfic attachment by unique id")]
+        [HttpGet("{postId}/{id}")]
+        public async Task<IActionResult> DownloadAsync(int id, int postId)
         {
-            var picture = await _pictureService.GetPictureByIdAsync(id);
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var userOwnPost = await _postService.UserOwnPostAsync(postId, userId);
 
-            if (picture == null)
+            if (!userOwnPost)
             {
-                return NotFound();
+                var succeeded = false;
+                var message = "You do not own this post";
+
+                var response = new Response(succeeded, message);
+
+                return BadRequest(response);
             }
 
-            var response = new Response<PictureDto>(picture);
+            var attachment = await _attachmentService.DownloadAttachmentByIdAsync(id);
+            if (attachment == null)
+                return NotFound();
 
-            return Ok(response);
+            var content = attachment.Content;
+            //typ pliku - Octet to typ ogolny, nie okreslamy jakieo typu pliki wybieramy
+            var type = MediaTypeNames.Application.Octet;
+            var name = attachment.Name;
+
+            return File(content, type, name);
         }
 
-        [SwaggerOperation(Summary = "Add a new picture to post")]
-        [HttpPost("postId")]
+        [SwaggerOperation(Summary = "Add a new attachment to post")]
+        [HttpPost("{postId}")]
         public async Task<IActionResult> AddToPostAsync(int postId, IFormFile file)
         {
             var post = await _postService.GetPostByIdAsync(postId);
@@ -83,36 +97,15 @@ namespace WebAPI.Controllers.V1
                 return BadRequest(response);
             }
 
-            var picture = await _pictureService.AddPictureToPostAsync(postId, file);
-            var respone = new Response<PictureDto>(picture);
+            var attachment = await _attachmentService.AddAttachmentToPostAsync(postId, file);
+            var respone = new Response<AttachmentDto>(attachment);
 
-            return Created($"api/pictures/{picture.Id}", respone);
+            return Created($"api/attachments/{attachment.Id}", respone);
         }
 
-        [SwaggerOperation(Summary = "Sets the main picture of the post")]
-        [HttpPut("[action]/{postId}/{id}")]
-        public async Task<IActionResult> SetMainPictureAsync(int postId, int id)
-        {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var userOwnPost = await _postService.UserOwnPostAsync(postId, userId);
-
-            if (!userOwnPost)
-            {
-                var succeeded = false;
-                var message = "You do not own this post";
-
-                var response = new Response(succeeded, message);
-
-                return BadRequest(response);
-            }
-
-            await _pictureService.SetMainPictureAsync(postId, id);
-            return NoContent();
-        }
-
-        [SwaggerOperation(Summary = "Delete a specyfic picture")]
+        [SwaggerOperation(Summary = "Delete a specyfic attachment")]
         [HttpDelete("{postId}/{id}")]
-        public async Task<IActionResult> DeleteAsync(int id, int postId)
+        public async Task<IActionResult> Delete(int id, int postId)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var userOwnPost = await _postService.UserOwnPostAsync(postId, userId);
@@ -127,7 +120,7 @@ namespace WebAPI.Controllers.V1
                 return BadRequest(response);
             }
 
-            await _pictureService.DeletePictureAsync(id);
+            await _attachmentService.DeleteAttachmentAsync(id);
             return NoContent();
         }
     }

@@ -19,6 +19,7 @@ namespace Infrastructure.Data
         }
         public DbSet<Post> Posts { get; set; }
         public DbSet<Picture> Pictures { get; set; }
+        public DbSet<Attachment> Attachments { get; set; }
 
         public async Task<int> SaveChangesAsync()
         {
