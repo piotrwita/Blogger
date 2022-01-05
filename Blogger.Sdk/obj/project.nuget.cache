@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "zqI624h/67ABIhZTpwJDgIIxm5KSui0XZAEV/SZaMD9osNX27ienu75tITmya449FKjjb/tOjGRUrXT8jgp2nw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\piotr\\source\\repos\\Blogger\\Blogger.Sdk\\Blogger.Sdk.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\piotr\\.nuget\\packages\\refit\\6.1.15\\refit.6.1.15.nupkg.sha512",
+    "C:\\Users\\piotr\\.nuget\\packages\\system.net.http.json\\5.0.0\\system.net.http.json.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

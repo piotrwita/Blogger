@@ -1,5 +1,4 @@
-﻿using Application.Dto.Attachment;
-using Application.Dto.Picture;
+﻿using Application.Dto.Attachments;
 using Microsoft.AspNetCore.Http;
 
 namespace Application.Interfaces

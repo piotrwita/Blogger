@@ -1,7 +1,5 @@
-﻿using Application.Dto;
-using Application.Dto.Post;
+﻿using Application.Dto.Posts;
 using Application.Interfaces;
-using Application.Validators;
 using Infrastructure.Identity;
 using Microsoft.AspNetCore.Authorization;
 //using Microsoft.AspNet.OData;
@@ -48,12 +46,12 @@ namespace WebAPI.Controllers.V1
                                                     [FromQuery] SortingFilter sortingFilter,
                                                     [FromQuery] string filterBy = "")
         {
-            var validPaginationFilter = new PaginationFilter(paginationFilter.PageNumber,paginationFilter.PageSize);
+            var validPaginationFilter = new PaginationFilter(paginationFilter.PageNumber, paginationFilter.PageSize);
             var validSortFilter = new SortingFilter(sortingFilter.SortField, sortingFilter.Ascengind);
 
             var posts = await _postService.GetAllPostsAsync(validPaginationFilter.PageNumber,
                                                             validPaginationFilter.PageSize,
-                                                            validSortFilter.SortField, 
+                                                            validSortFilter.SortField,
                                                             validSortFilter.Ascengind,
                                                             filterBy);
 
@@ -120,7 +118,7 @@ namespace WebAPI.Controllers.V1
 
                 return BadRequest(response);
             }
-                
+
             await _postService.UpdatePostAsync(updatePost);
             return NoContent();
         }

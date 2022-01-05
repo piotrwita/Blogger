@@ -285,10 +285,10 @@ namespace WebAPI.Controllers.V1
                     );
 
                 //token z informacją o dacie wygaśnięcia
-                var extendedToken = new
+                var extendedToken = new AuthSuccessResponse()
                 {
-                    token = new JwtSecurityTokenHandler().WriteToken(token),
-                    expitarion = token.ValidTo
+                    Token = new JwtSecurityTokenHandler().WriteToken(token),
+                    Expiration = token.ValidTo
                 };
 
                 return Ok(extendedToken);

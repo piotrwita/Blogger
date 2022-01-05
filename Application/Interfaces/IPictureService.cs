@@ -1,5 +1,5 @@
-﻿using Application.Dto.Picture;
-using Application.Dto.Post;
+﻿using Application.Dto.Pictures;
+using Application.Dto.Posts;
 using Microsoft.AspNetCore.Http;
 
 namespace Application.Interfaces

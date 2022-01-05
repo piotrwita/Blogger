@@ -1,4 +1,4 @@
-﻿using Application.Dto.Picture;
+﻿using Application.Dto.Pictures;
 using Application.Interfaces;
 using Infrastructure.Identity;
 using Microsoft.AspNetCore.Authorization;

@@ -1,4 +1,4 @@
-﻿using Application.Dto.Attachment;
+﻿using Application.Dto.Attachments;
 using Application.Interfaces;
 using Infrastructure.Identity;
 using Microsoft.AspNetCore.Authorization;

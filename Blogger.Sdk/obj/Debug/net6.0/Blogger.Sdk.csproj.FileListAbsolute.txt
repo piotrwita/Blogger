@@ -1,0 +1,15 @@
+C:\Users\piotr\source\repos\Blogger\Blogger.Sdk\bin\Debug\net6.0\Blogger.Sdk.deps.json
+C:\Users\piotr\source\repos\Blogger\Blogger.Sdk\bin\Debug\net6.0\Blogger.Sdk.dll
+C:\Users\piotr\source\repos\Blogger\Blogger.Sdk\bin\Debug\net6.0\ref\Blogger.Sdk.dll
+C:\Users\piotr\source\repos\Blogger\Blogger.Sdk\bin\Debug\net6.0\Blogger.Sdk.pdb
+C:\Users\piotr\source\repos\Blogger\Blogger.Sdk\bin\Debug\net6.0\Blogger.Contracts.dll
+C:\Users\piotr\source\repos\Blogger\Blogger.Sdk\bin\Debug\net6.0\Blogger.Contracts.pdb
+C:\Users\piotr\source\repos\Blogger\Blogger.Sdk\obj\Debug\net6.0\Blogger.Sdk.csproj.AssemblyReference.cache
+C:\Users\piotr\source\repos\Blogger\Blogger.Sdk\obj\Debug\net6.0\Blogger.Sdk.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\piotr\source\repos\Blogger\Blogger.Sdk\obj\Debug\net6.0\Blogger.Sdk.AssemblyInfoInputs.cache
+C:\Users\piotr\source\repos\Blogger\Blogger.Sdk\obj\Debug\net6.0\Blogger.Sdk.AssemblyInfo.cs
+C:\Users\piotr\source\repos\Blogger\Blogger.Sdk\obj\Debug\net6.0\Blogger.Sdk.csproj.CoreCompileInputs.cache
+C:\Users\piotr\source\repos\Blogger\Blogger.Sdk\obj\Debug\net6.0\Blogger.Sdk.csproj.CopyComplete
+C:\Users\piotr\source\repos\Blogger\Blogger.Sdk\obj\Debug\net6.0\Blogger.Sdk.dll
+C:\Users\piotr\source\repos\Blogger\Blogger.Sdk\obj\Debug\net6.0\ref\Blogger.Sdk.dll
+C:\Users\piotr\source\repos\Blogger\Blogger.Sdk\obj\Debug\net6.0\Blogger.Sdk.pdb

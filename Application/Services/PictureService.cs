@@ -1,4 +1,4 @@
-﻿using Application.Dto.Picture;
+﻿using Application.Dto.Pictures;
 using Application.ExtensionMethods;
 using Domain.Interfaces;
 using Microsoft.AspNetCore.Http;

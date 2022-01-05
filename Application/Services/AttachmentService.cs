@@ -1,5 +1,5 @@
-﻿using Application.Dto.Attachment;
-using Application.Dto.Picture;
+﻿using Application.Dto.Attachments;
+using Application.Dto.Pictures;
 using Application.ExtensionMethods;
 using Domain.Interfaces;
 using Microsoft.AspNetCore.Http;
