@@ -322,6 +322,18 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AspNetCore.HealthChecks.UI": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
+            "AspNetCore.HealthChecks.UI.Client": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
+            "AspNetCore.HealthChecks.UI.InMemory.Storage": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
             "Cosmonaut.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[2.3.0, )"
@@ -349,6 +361,10 @@
             "Microsoft.AspNetCore.OData": {
               "target": "Package",
               "version": "[8.0.4, )"
+            },
+            "Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.1, )"
             },
             "OData.Swagger": {
               "target": "Package",

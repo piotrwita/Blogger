@@ -46,6 +46,21 @@
             Logs the user into system
             </summary>
         </member>
+        <member name="T:WebAPI.HealthChecks.HealthCheck">
+            <summary>
+            Klasa opisuje kondycje usługi
+            </summary>
+        </member>
+        <member name="T:WebAPI.HealthChecks.HealthCheckResponse">
+            <summary>
+            Klasa opisuje ogolna kondycje api i dostarcza informacje o kondycji poszczegolnych uslug
+            </summary>
+        </member>
+        <member name="T:WebAPI.HealthChecks.ResponseTimeHealthCheck">
+            <summary>
+            Sprawdza szybkość sieci
+            </summary>
+        </member>
         <member name="T:WebAPI.Helpers.SortFields">
             <summary>
             Pomocnicza klasa określająca po których polach można dokonać sortowania 
