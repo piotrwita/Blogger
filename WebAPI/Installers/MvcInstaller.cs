@@ -44,8 +44,10 @@ namespace WebAPI.Installers
 
             services.AddTransient<UserResolverService>();
 
+            #region Middlewares
             services.AddScoped<ErrorHandlingMiddleware>();
-
+            services.AddScoped<RequestTimeMiddleware>();
+            #endregion
             //services.AddOData();
         }
     }

@@ -27,6 +27,7 @@ if (app.Environment.IsDevelopment())
 
 //co istotne musimy wywo³aæ middleware na samym pocz¹tku
 app.UseMiddleware<ErrorHandlingMiddleware>();
+app.UseMiddleware<RequestTimeMiddleware>();
 
 //jako argument przedstawiamy sciezke do endpointa przedstawiajacego kondycje naszego api
 //ponizsze opcje pozwalaja na wyswietlenie w formacie json info o kondycji api reprezentowanej przez klase HealthCheckResponse
