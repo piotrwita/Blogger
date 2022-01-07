@@ -2,12 +2,49 @@
 //using Microsoft.AspNet.OData.Extensions;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
-using Newtonsoft.Json;
-using WebAPI.HealthChecks;
+using NLog.Web;
+using Serilog;
+using Serilog.Sinks.Elasticsearch;
 using WebAPI.Installers;
 using WebAPI.Middlewares;
 
-var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder builder;
+
+//dzieki temu mozemy zalogowac akcje podczas procesu tworzenia aplikacji
+var logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
+
+try
+{
+    builder = WebApplication.CreateBuilder(args);
+}
+catch (Exception ex)
+{
+    logger.Fatal(ex, "API stopped");
+    throw;
+}
+finally
+{
+    //reczne zwolnienie zasobow klasy logera
+    NLog.LogManager.Shutdown();
+}
+
+
+//builder.Host.UseNLog();
+builder.Host.UseSerilog((context, configuration) =>
+{
+    //umozliwia rejestrowanie dodadkowych wartosci do loga
+    configuration.Enrich.FromLogContext()
+    .Enrich.WithMachineName()
+    .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri(context.Configuration["ElasticConfiguration:Uri"]))
+    {
+        IndexFormat = $"{context.Configuration["ApplicationName"]}-logs-{context.HostingEnvironment.EnvironmentName?.ToLower().Replace(".", "-")}-{DateTime.UtcNow:yyyu-MM}",
+        AutoRegisterTemplate = true,
+        NumberOfShards = 2,
+        NumberOfReplicas = 1
+    })
+    .Enrich.WithProperty("Enviroment", context.HostingEnvironment.EnvironmentName)
+    .ReadFrom.Configuration(context.Configuration);
+});
 
 // Add services to the container.
 builder.Services.InstallServicesInAssembly(builder.Configuration);
@@ -17,7 +54,6 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 
 app.UseDeveloperExceptionPage();
-
 
 if (app.Environment.IsDevelopment())
 {

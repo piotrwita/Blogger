@@ -1,5 +1,6 @@
 ﻿using Application.Dto.Posts;
 using Domain.Interfaces;
+using Microsoft.Extensions.Logging;
 
 namespace Application.Services
 {
@@ -7,14 +8,20 @@ namespace Application.Services
     {
         private readonly IPostRepository _postRepository;
         private readonly IMapper _mapper;
+        private readonly ILogger<PostService> _logger;
+
         public PostService(IPostRepository postRepository,
-                           IMapper mapper)
+                           IMapper mapper,
+                           ILogger<PostService> logger)
         {
             _postRepository =
                 postRepository ?? throw new ArgumentNullException(nameof(postRepository));
 
             _mapper =
                 mapper ?? throw new ArgumentNullException(nameof(mapper));
+
+            _logger =
+                logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         public IQueryable<PostDto> GetAllPosts()
@@ -26,6 +33,9 @@ namespace Application.Services
 
         public async Task<IEnumerable<PostDto>> GetAllPostsAsync(int pageNumber, int pageSize, string sortField, bool ascengind, string filterBy)
         {
+            _logger.LogDebug("Fetching posts");
+            _logger.LogInformation($"pageNumber: {pageNumber} | pageSize: {pageSize}");
+
             var posts = await _postRepository.GetAllAsync(pageNumber, pageSize, sortField, ascengind, filterBy);
             //zwracane są zawsze wszystkie pola określone przez model
             return _mapper.Map<IEnumerable<PostDto>>(posts);
