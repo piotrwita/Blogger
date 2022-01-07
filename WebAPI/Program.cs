@@ -10,7 +10,7 @@ using WebAPI.Middlewares;
 
 WebApplicationBuilder builder;
 
-//dzieki temu mozemy zalogowac akcje podczas procesu tworzenia aplikacji
+////dzieki temu mozemy zalogowac akcje podczas procesu tworzenia aplikacji
 var logger = NLogBuilder.ConfigureNLog("nlog.config").GetCurrentClassLogger();
 
 try
@@ -25,26 +25,26 @@ catch (Exception ex)
 finally
 {
     //reczne zwolnienie zasobow klasy logera
-    NLog.LogManager.Shutdown();
+    //NLog.LogManager.Shutdown();
 }
 
 
-//builder.Host.UseNLog();
-builder.Host.UseSerilog((context, configuration) =>
-{
-    //umozliwia rejestrowanie dodadkowych wartosci do loga
-    configuration.Enrich.FromLogContext()
-    .Enrich.WithMachineName()
-    .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri(context.Configuration["ElasticConfiguration:Uri"]))
-    {
-        IndexFormat = $"{context.Configuration["ApplicationName"]}-logs-{context.HostingEnvironment.EnvironmentName?.ToLower().Replace(".", "-")}-{DateTime.UtcNow:yyyu-MM}",
-        AutoRegisterTemplate = true,
-        NumberOfShards = 2,
-        NumberOfReplicas = 1
-    })
-    .Enrich.WithProperty("Enviroment", context.HostingEnvironment.EnvironmentName)
-    .ReadFrom.Configuration(context.Configuration);
-});
+builder.Host.UseNLog();
+//builder.Host.UseSerilog((context, configuration) =>
+//{
+//    //umozliwia rejestrowanie dodadkowych wartosci do loga
+//    configuration.Enrich.FromLogContext()
+//    .Enrich.WithMachineName()
+//    .WriteTo.Elasticsearch(new ElasticsearchSinkOptions(new Uri(context.Configuration["ElasticConfiguration:Uri"]))
+//    {
+//        IndexFormat = $"{context.Configuration["ApplicationName"]}-logs-{context.HostingEnvironment.EnvironmentName?.ToLower().Replace(".", "-")}-{DateTime.UtcNow:yyyu-MM}",
+//        AutoRegisterTemplate = true,
+//        NumberOfShards = 2,
+//        NumberOfReplicas = 1
+//    })
+//    .Enrich.WithProperty("Enviroment", context.HostingEnvironment.EnvironmentName)
+//    .ReadFrom.Configuration(context.Configuration);
+//});
 
 // Add services to the container.
 builder.Services.InstallServicesInAssembly(builder.Configuration);

@@ -30,7 +30,22 @@
       "ProjectGuid": "c1aa7aa7-2201-4dee-9b43-c652ee9d4347",
       "DisplayName": "WebAPI2",
       "ColorIndex": 4
+    },
+    "b4a3e534-7aef-44ad-baf0-64783173d0de": {
+      "ProjectGuid": "b4a3e534-7aef-44ad-baf0-64783173d0de",
+      "DisplayName": "Blogger.Sdk",
+      "ColorIndex": 5
+    },
+    "a750409f-c62f-466a-8dbf-c74ab3e03390": {
+      "ProjectGuid": "a750409f-c62f-466a-8dbf-c74ab3e03390",
+      "DisplayName": "Blogger.Sdk.Sample",
+      "ColorIndex": 6
+    },
+    "98f53e8e-9980-4993-a2f8-6ed667cbca57": {
+      "ProjectGuid": "98f53e8e-9980-4993-a2f8-6ed667cbca57",
+      "DisplayName": "Blogger.Contracts",
+      "ColorIndex": 7
     }
   },
-  "NextColorIndex": 5
+  "NextColorIndex": 8
 }

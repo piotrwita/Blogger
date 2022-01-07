@@ -4,9 +4,11 @@ using Infrastructure.Identity;
 using Microsoft.AspNetCore.Authorization;
 //using Microsoft.AspNet.OData;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 using Swashbuckle.AspNetCore.Annotations;
 using System.Security.Claims;
 using WebAPI.Attributes;
+using WebAPI.Cache;
 using WebAPI.Filters;
 using WebAPI.Helpers;
 using WebAPI.Wrappers;
@@ -25,10 +27,20 @@ namespace WebAPI.Controllers.V1
     public class PostsController : Controller
     {
         private readonly IPostService _postService;
-        public PostsController(IPostService postService)
+        private readonly IMemoryCache _memoryCache;
+        private readonly ILogger _logger;
+        public PostsController(IPostService postService,
+                               IMemoryCache memoryCache,
+                               ILogger<PostsController> logger)
         {
             _postService =
                 postService ?? throw new ArgumentNullException(nameof(postService));
+
+            _memoryCache =
+                memoryCache ?? throw new ArgumentNullException(nameof(memoryCache));
+
+            _logger =
+                logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         [SwaggerOperation(Summary = "Retrieves sort fields")]
@@ -39,8 +51,9 @@ namespace WebAPI.Controllers.V1
             return Ok(SortingHelper.GetSortFields().Select(x => x.Key));
         }
 
-        [SwaggerOperation(Summary = "Retrieves all posts")]
+        [SwaggerOperation(Summary = "Retrieves paged posts")]
         [AllowAnonymous]
+        //[Cached(600)]
         [HttpGet]
         public async Task<IActionResult> GetAsync([FromQuery] /*Wartość parametru zostanie pobrana z ciągu zapytania*/ PaginationFilter paginationFilter,
                                                     [FromQuery] SortingFilter sortingFilter,
@@ -61,13 +74,27 @@ namespace WebAPI.Controllers.V1
             return Ok(pagedResponse);
         }
 
-        [SwaggerOperation(Summary = "Retrieves paged posts")]
+        [SwaggerOperation(Summary = "Retrieves all posts")]
         [Authorize(Roles = UserRoles.Admin + "," + UserRoles.SuperUser)]
         //[EnableQuery]
         [HttpGet("[action]")]
         public IQueryable<PostDto> GetAll()
         {
-            return _postService.GetAllPosts();
+            var posts = _memoryCache.Get<IQueryable<PostDto>>("posts");
+
+            if (posts == null)
+            {
+                _logger.LogInformation("Fetching from service");
+                posts = _postService.GetAllPosts();
+                //dodanie danych do cache, klucz pod ktorym przechowywane sa dane w pamieci, kolekcja danych, czas przez ktory dane sa cachowane
+                _memoryCache.Set("posts", posts, TimeSpan.FromMinutes(1));
+            }
+            else
+            {
+                _logger.LogInformation("Fetching from cache");
+            }           
+
+            return posts;
         }
 
         [SwaggerOperation(Summary = "Retrieves a specyfic post by unique id")]

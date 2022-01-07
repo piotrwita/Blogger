@@ -6,7 +6,7 @@ namespace WebAPI.Middlewares
     public class RequestTimeMiddleware : IMiddleware
     {
         private const int limitSeconds = 3;
-        private const string path = @"C:\BloggerLogs.txt";
+        private const string path = @"C:\logs\bloggerRequestTime.txt";
 
         public async Task InvokeAsync(HttpContext context, RequestDelegate next)
         {

@@ -9,6 +9,18 @@
             odpowiednie sformatowanie odpowiedzi wynikającej z walidacji z wykorzystaniem klasy Response
             </summary>
         </member>
+        <member name="M:WebAPI.Cache.CachedAttribute.GenerateCacheKeyFromRequest(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            tworzony zostaje unikalny klucz na podstawie ścieżki oraz zapytania pochodzacych z żądania
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="P:WebAPI.Cache.RedisCacheSettings.ConnectionString">
+            <summary>
+            ciag polaczenia do db redis
+            </summary>
+        </member>
         <member name="F:WebAPI.Controllers.V1.IdentityController._userManager">
             <summary>
             Pozwala zarządzać użytkownikami , wyszukiwać , dodawać
