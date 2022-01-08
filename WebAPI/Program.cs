@@ -2,6 +2,7 @@
 //using Microsoft.AspNet.OData.Extensions;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using NLog;
 using NLog.Web;
 using Serilog;
 using Serilog.Sinks.Elasticsearch;
@@ -25,10 +26,9 @@ catch (Exception ex)
 finally
 {
     //reczne zwolnienie zasobow klasy logera
-    //NLog.LogManager.Shutdown();
+    //LogManager.Shutdown();
 }
-
-
+    
 builder.Host.UseNLog();
 //builder.Host.UseSerilog((context, configuration) =>
 //{
