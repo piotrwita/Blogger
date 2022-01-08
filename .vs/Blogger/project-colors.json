@@ -45,7 +45,17 @@
       "ProjectGuid": "98f53e8e-9980-4993-a2f8-6ed667cbca57",
       "DisplayName": "Blogger.Contracts",
       "ColorIndex": 7
+    },
+    "56a9d634-57ea-4082-9cb1-6e8f211b8954": {
+      "ProjectGuid": "56a9d634-57ea-4082-9cb1-6e8f211b8954",
+      "DisplayName": "UnitTests",
+      "ColorIndex": 8
+    },
+    "c243b48d-db2f-4066-bde3-8b44502835f3": {
+      "ProjectGuid": "c243b48d-db2f-4066-bde3-8b44502835f3",
+      "DisplayName": "EndToEndTests",
+      "ColorIndex": 9
     }
   },
-  "NextColorIndex": 8
+  "NextColorIndex": 10
 }
