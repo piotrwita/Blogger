@@ -26,7 +26,7 @@ catch (Exception ex)
 finally
 {
     //reczne zwolnienie zasobow klasy logera
-    //LogManager.Shutdown();
+    LogManager.Shutdown();
 }
     
 builder.Host.UseNLog();
