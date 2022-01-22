@@ -1,7 +1,5 @@
-﻿using Domain.Entities;
-using Infrastructure.Data;
-using Infrastructure.ExtensionMethods;
-using Dapper;
+﻿using Dapper;
+using Domain.Entities;
 using Infrastructure.Data.Dapper;
 
 namespace Infrastructure.Repositories
@@ -14,7 +12,7 @@ namespace Infrastructure.Repositories
 
         public DapperPostRepository(DapperContext context)
         {
-            _context = 
+            _context =
                 context ?? throw new ArgumentNullException(nameof(context));
         }
 
@@ -88,7 +86,7 @@ namespace Infrastructure.Repositories
 
             using (var connection = _context.CreateConnection())
             {
-                var id = await connection.QueryFirstOrDefaultAsync<int>(query); 
+                var id = await connection.QueryFirstOrDefaultAsync<int>(query);
                 return new Post { Id = id, Title = post.Title, Content = post.Content, Created = post.Created };
             }
         }

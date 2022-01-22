@@ -25,7 +25,7 @@ namespace EndToEndTests.Controllers
         public PostControllerTests()
         {
             //Arrange - przygotowanie
-            var projectDir = Helper.GetProjectPath("", typeof(Startup).GetTypeInfo().Assembly);
+            var projectDir = Helper.GetProjectPath("", typeof(Program).GetTypeInfo().Assembly);
             _server = new TestServer(new WebHostBuilder()
                 .UseEnvironment("Development")
                 .UseContentRoot(projectDir)

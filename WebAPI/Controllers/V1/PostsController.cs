@@ -1,6 +1,7 @@
 ﻿using Application.Dto.Posts;
 using Application.Interfaces;
 using Infrastructure.Identity;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 //using Microsoft.AspNet.OData;
 using Microsoft.AspNetCore.Mvc;
@@ -11,6 +12,7 @@ using WebAPI.Attributes;
 using WebAPI.Cache;
 using WebAPI.Filters;
 using WebAPI.Helpers;
+using WebAPI.Queries;
 using WebAPI.Wrappers;
 
 namespace WebAPI.Controllers.V1
@@ -29,9 +31,11 @@ namespace WebAPI.Controllers.V1
         private readonly IPostService _postService;
         private readonly IMemoryCache _memoryCache;
         private readonly ILogger _logger;
+        private readonly IMediator _mediator;
         public PostsController(IPostService postService,
                                IMemoryCache memoryCache,
-                               ILogger<PostsController> logger)
+                               ILogger<PostsController> logger,
+                               IMediator mediator)
         {
             _postService =
                 postService ?? throw new ArgumentNullException(nameof(postService));
@@ -41,6 +45,9 @@ namespace WebAPI.Controllers.V1
 
             _logger =
                 logger ?? throw new ArgumentNullException(nameof(logger));
+
+            _mediator =
+                mediator ?? throw new ArgumentNullException(nameof(mediator));
         }
 
         [SwaggerOperation(Summary = "Retrieves sort fields")]
@@ -80,6 +87,9 @@ namespace WebAPI.Controllers.V1
         [HttpGet("[action]")]
         public IQueryable<PostDto> GetAll()
         {
+            //var query = new GetAllPostsQuery();
+            //var result = await _mediator.Send(query);
+            //return result;
             var posts = _memoryCache.Get<IQueryable<PostDto>>("posts");
 
             if (posts == null)
@@ -92,7 +102,7 @@ namespace WebAPI.Controllers.V1
             else
             {
                 _logger.LogInformation("Fetching from cache");
-            }           
+            }
 
             return posts;
         }

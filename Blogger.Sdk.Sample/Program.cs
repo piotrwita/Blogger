@@ -25,7 +25,7 @@ var bloggerApi = RestService.For<IBloggerApi>(client, settings);
 
 var loginModel = new LoginModel()
 {
-    UserName = "sdkaccout111",
+    UserName = "piotruser1",
     Password = "Psdssd@@@222ooo"
 };
 
