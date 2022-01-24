@@ -71,7 +71,7 @@ namespace WebAPI.Controllers.V1
             }
 
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var userOwnPost = await _postService.UserOwnPostAsync(postId, userId);
+            var userOwnPost = await _postService.IsUserOwnPostAsync(postId, userId);
 
             if (!userOwnPost)
             {
@@ -94,7 +94,7 @@ namespace WebAPI.Controllers.V1
         public async Task<IActionResult> SetMainPictureAsync(int postId, int id)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var userOwnPost = await _postService.UserOwnPostAsync(postId, userId);
+            var userOwnPost = await _postService.IsUserOwnPostAsync(postId, userId);
 
             if (!userOwnPost)
             {
@@ -115,7 +115,7 @@ namespace WebAPI.Controllers.V1
         public async Task<IActionResult> DeleteAsync(int id, int postId)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var userOwnPost = await _postService.UserOwnPostAsync(postId, userId);
+            var userOwnPost = await _postService.IsUserOwnPostAsync(postId, userId);
 
             if (!userOwnPost)
             {

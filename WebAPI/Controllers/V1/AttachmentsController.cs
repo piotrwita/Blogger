@@ -44,7 +44,7 @@ namespace WebAPI.Controllers.V1
         public async Task<IActionResult> DownloadAsync(int id, int postId)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var userOwnPost = await _postService.UserOwnPostAsync(postId, userId);
+            var userOwnPost = await _postService.IsUserOwnPostAsync(postId, userId);
 
             if (!userOwnPost)
             {
@@ -85,7 +85,7 @@ namespace WebAPI.Controllers.V1
             }
 
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var userOwnPost = await _postService.UserOwnPostAsync(postId, userId);
+            var userOwnPost = await _postService.IsUserOwnPostAsync(postId, userId);
 
             if (!userOwnPost)
             {
@@ -108,7 +108,7 @@ namespace WebAPI.Controllers.V1
         public async Task<IActionResult> Delete(int id, int postId)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var userOwnPost = await _postService.UserOwnPostAsync(postId, userId);
+            var userOwnPost = await _postService.IsUserOwnPostAsync(postId, userId);
 
             if (!userOwnPost)
             {

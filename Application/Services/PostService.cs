@@ -78,7 +78,7 @@ namespace Application.Services
             await _postRepository.DeleteAsync(post);
         }
 
-        public async Task<bool> UserOwnPostAsync(int postId, string userId)
+        public async Task<bool> IsUserOwnPostAsync(int postId, string userId)
         {
             var post = await _postRepository.GetByIdAsync(postId);
 

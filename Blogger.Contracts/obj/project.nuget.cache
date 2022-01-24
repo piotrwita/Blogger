@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ttSzRxaLX/A1R+6B8tQZaOApmsDgcDfRAC7sncvhL1FDtsILnTiuL1wRHRYSaSE11Ovgq+gsSWdsJCocpzBfsw==",
+  "dgSpecHash": "CL3ZvjBHQdnYsmmrUZ7Cbi6E74KZaugAzkswhbS1GwhuD90cMdA86uVUim/3ADmDKnElNB9TGpnC0Ng/KDoszA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\piotr\\source\\repos\\Blogger\\Blogger.Contracts\\Blogger.Contracts.csproj",
+  "projectFilePath": "C:\\Users\\piotr\\source\\repos\\piotrwita\\Blogger\\Blogger.Contracts\\Blogger.Contracts.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

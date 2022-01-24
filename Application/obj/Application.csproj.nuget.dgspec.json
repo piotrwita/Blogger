@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\piotr\\source\\repos\\Blogger\\Application\\Application.csproj": {}
+    "C:\\Users\\piotr\\source\\repos\\piotrwita\\Blogger\\Application\\Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\piotr\\source\\repos\\Blogger\\Application\\Application.csproj": {
+    "C:\\Users\\piotr\\source\\repos\\piotrwita\\Blogger\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\piotr\\source\\repos\\Blogger\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\piotr\\source\\repos\\piotrwita\\Blogger\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\piotr\\source\\repos\\Blogger\\Application\\Application.csproj",
+        "projectPath": "C:\\Users\\piotr\\source\\repos\\piotrwita\\Blogger\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\piotr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\piotr\\source\\repos\\Blogger\\Application\\obj\\",
+        "outputPath": "C:\\Users\\piotr\\source\\repos\\piotrwita\\Blogger\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -24,18 +24,17 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net60"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net60": {
             "projectReferences": {
-              "C:\\Users\\piotr\\source\\repos\\Blogger\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\piotr\\source\\repos\\Blogger\\Domain\\Domain.csproj"
+              "C:\\Users\\piotr\\source\\repos\\piotrwita\\Blogger\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\piotr\\source\\repos\\piotrwita\\Blogger\\Domain\\Domain.csproj"
               }
             }
           }
@@ -47,8 +46,7 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net60": {
           "dependencies": {
             "AutoMapper": {
               "target": "Package",
@@ -65,6 +63,10 @@
             "FluentValidation.AspNetCore": {
               "target": "Package",
               "version": "[10.3.6, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[10.0.1, )"
             },
             "Microsoft.AspNetCore.Http.Abstractions": {
               "target": "Package",
@@ -87,33 +89,18 @@
               "version": "[6.0.0, )"
             }
           },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\piotr\\source\\repos\\Blogger\\Domain\\Domain.csproj": {
+    "C:\\Users\\piotr\\source\\repos\\piotrwita\\Blogger\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\piotr\\source\\repos\\Blogger\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\piotr\\source\\repos\\piotrwita\\Blogger\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\piotr\\source\\repos\\Blogger\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\piotr\\source\\repos\\piotrwita\\Blogger\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\piotr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\piotr\\source\\repos\\Blogger\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\piotr\\source\\repos\\piotrwita\\Blogger\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -126,15 +113,14 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net60"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net60": {
             "projectReferences": {}
           }
         },
@@ -145,30 +131,14 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net60": {
           "dependencies": {
             "Cosmonaut": {
               "target": "Package",
               "version": "[2.11.3, )"
             }
           },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

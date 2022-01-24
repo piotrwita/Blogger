@@ -11,6 +11,6 @@ namespace Application.Interfaces
         Task<PostDto> AddNewPostAsync(CreatePostDto newPost, string userId);
         Task UpdatePostAsync(UpdatePostDto updatePost);
         Task DeletePostAsync(int id);
-        Task<bool> UserOwnPostAsync(int postId, string userId);
+        Task<bool> IsUserOwnPostAsync(int postId, string userId);
     }
 }

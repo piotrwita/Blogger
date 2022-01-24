@@ -1,5 +1,8 @@
-﻿using Application.Dto.Posts;
+﻿using Application.Commands.Posts;
+using Application.Dto.Posts;
+using Application.Handlers.Posts;
 using Application.Interfaces;
+using Application.Queries.Posts;
 using Infrastructure.Identity;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -12,7 +15,7 @@ using WebAPI.Attributes;
 using WebAPI.Cache;
 using WebAPI.Filters;
 using WebAPI.Helpers;
-using WebAPI.Queries;
+
 using WebAPI.Wrappers;
 
 namespace WebAPI.Controllers.V1
@@ -130,7 +133,8 @@ namespace WebAPI.Controllers.V1
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            var post = await _postService.AddNewPostAsync(newPost, userId);
+            var command = new CreatePostAsyncCommand(newPost, userId);
+            var post = await _mediator.Send(command);
 
             var response = new Response<PostDto>(post);
 
@@ -143,10 +147,13 @@ namespace WebAPI.Controllers.V1
         public async Task<IActionResult> UpdateAsync(UpdatePostDto updatePost)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var userOwnPost = await _postService.UserOwnPostAsync(updatePost.Id, userId);
+
+            var query = new IsUserOwnPostAsyncQuery(updatePost.Id, userId);
+            var isUserOwnPost = await _mediator.Send(query);
+
             var isSuperUser = User.FindFirstValue(ClaimTypes.Role).Contains(UserRoles.SuperUser);
 
-            if (!userOwnPost && !isSuperUser)
+            if (!isUserOwnPost && !isSuperUser)
             {
                 var succeeded = false;
                 var message = "You do not own this post";
@@ -156,7 +163,9 @@ namespace WebAPI.Controllers.V1
                 return BadRequest(response);
             }
 
-            await _postService.UpdatePostAsync(updatePost);
+            var command = new UpdatePostAsyncCommand(updatePost);
+            await _mediator.Send(command);
+
             return NoContent();
         }
 
@@ -166,11 +175,14 @@ namespace WebAPI.Controllers.V1
         public async Task<IActionResult> DeleteAsync(int id)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var userOwnPost = await _postService.UserOwnPostAsync(id, userId);
+
+            var query = new IsUserOwnPostAsyncQuery(id, userId);
+            var isUserOwnPost = await _mediator.Send(query);
+
             var isAdmin = User.FindFirstValue(ClaimTypes.Role).Contains(UserRoles.Admin);
             var isSuperUser = User.FindFirstValue(ClaimTypes.Role).Contains(UserRoles.SuperUser);
 
-            if (!userOwnPost && !isAdmin && !isSuperUser)
+            if (!isUserOwnPost && !isAdmin && !isSuperUser)
             {
                 var succeeded = false;
                 var message = "You do not own this post";
@@ -180,7 +192,9 @@ namespace WebAPI.Controllers.V1
                 return BadRequest(response);
             }
 
-            await _postService.DeletePostAsync(id);
+            var command = new DeletePostAsyncCommand(id);
+            await _mediator.Send(command);
+
             return NoContent();
         }
     }
