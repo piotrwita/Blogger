@@ -3,6 +3,7 @@ using Application.Dto.Posts;
 using Application.Handlers.Posts;
 using Application.Interfaces;
 using Application.Queries.Posts;
+using Application.Queries.Posts.Handlers;
 using Infrastructure.Identity;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -33,7 +34,7 @@ namespace WebAPI.Controllers.V1
     {
         private readonly IPostService _postService;
         private readonly IMemoryCache _memoryCache;
-        private readonly ILogger _logger;
+        private readonly ILogger<PostsController> _logger;
         private readonly IMediator _mediator;
         public PostsController(IPostService postService,
                                IMemoryCache memoryCache,
@@ -65,20 +66,23 @@ namespace WebAPI.Controllers.V1
         [AllowAnonymous]
         //[Cached(600)]
         [HttpGet]
-        public async Task<IActionResult> GetAsync([FromQuery] /*Wartość parametru zostanie pobrana z ciągu zapytania*/ PaginationFilter paginationFilter,
+        public async Task<IActionResult> GetPagedAsync([FromQuery] /*Wartość parametru zostanie pobrana z ciągu zapytania*/ PaginationFilter paginationFilter,
                                                     [FromQuery] SortingFilter sortingFilter,
                                                     [FromQuery] string filterBy = "")
         {
             var validPaginationFilter = new PaginationFilter(paginationFilter.PageNumber, paginationFilter.PageSize);
             var validSortFilter = new SortingFilter(sortingFilter.SortField, sortingFilter.Ascengind);
 
-            var posts = await _postService.GetAllPostsAsync(validPaginationFilter.PageNumber,
-                                                            validPaginationFilter.PageSize,
-                                                            validSortFilter.SortField,
-                                                            validSortFilter.Ascengind,
-                                                            filterBy);
+            var postsQuery = new GetPagedPostsAsyncQuery(validPaginationFilter.PageNumber,
+                                                    validPaginationFilter.PageSize,
+                                                    validSortFilter.SortField,
+                                                    validSortFilter.Ascengind,
+                                                    filterBy);
+            var posts = await _mediator.Send(postsQuery);
 
-            var totalRecords = await _postService.GetAllPostsCountAsync(filterBy);
+            var totalRecordsQuery = new GetAllPostsCountAsyncQuery(filterBy);
+            var totalRecords = await _mediator.Send(totalRecordsQuery); 
+
             var pagedResponse = PaginationHelper.CreatePagedResponse(posts, validPaginationFilter, totalRecords);
 
             return Ok(pagedResponse);
@@ -90,15 +94,13 @@ namespace WebAPI.Controllers.V1
         [HttpGet("[action]")]
         public IQueryable<PostDto> GetAll()
         {
-            //var query = new GetAllPostsQuery();
-            //var result = await _mediator.Send(query);
-            //return result;
             var posts = _memoryCache.Get<IQueryable<PostDto>>("posts");
 
             if (posts == null)
             {
                 _logger.LogInformation("Fetching from service");
-                posts = _postService.GetAllPosts();
+                var query = new GetAllPostsQuery(); 
+                posts = _mediator.Send(query).Result;
                 //dodanie danych do cache, klucz pod ktorym przechowywane sa dane w pamieci, kolekcja danych, czas przez ktory dane sa cachowane
                 _memoryCache.Set("posts", posts, TimeSpan.FromMinutes(1));
             }
@@ -113,9 +115,10 @@ namespace WebAPI.Controllers.V1
         [SwaggerOperation(Summary = "Retrieves a specyfic post by unique id")]
         [AllowAnonymous]
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetAsync(int id)
+        public async Task<IActionResult> GetByIdAsync(int id)
         {
-            var post = await _postService.GetPostByIdAsync(id);
+            var query = new GetPostByIdAsyncQuery(id);
+            var post = await _mediator.Send(query); 
 
             if (post == null)
                 return NotFound();

@@ -1,20 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "xPNSyNB/WVir+tTmGGYYzWoITlxKhnJpQ/CReNrUs1flX2oTC2Xt84Oc2MMXnVQlucyEIlOSfVRp4gvLKfWY/w==",
+  "dgSpecHash": "wPWdZtOVMQBKN4sLWw/VdFdR/pbCRTvmQ5NujWcEs3AkSRoBV+OSXl1VuhCujISGQJSrPgJi7fkSzfO2b8Vpww==",
   "success": true,
   "projectFilePath": "C:\\Users\\piotr\\source\\repos\\piotrwita\\Blogger\\Blogger.Sdk.Sample\\Blogger.Sdk.Sample.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\piotr\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\5.0.0\\microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\refit\\6.1.15\\refit.6.1.15.nupkg.sha512",
-    "C:\\Users\\piotr\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
-    "C:\\Users\\piotr\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
-    "C:\\Users\\piotr\\.nuget\\packages\\system.net.http.json\\5.0.0\\system.net.http.json.5.0.0.nupkg.sha512",
-    "C:\\Users\\piotr\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
-    "C:\\Users\\piotr\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
-    "C:\\Users\\piotr\\.nuget\\packages\\system.text.encodings.web\\5.0.0\\system.text.encodings.web.5.0.0.nupkg.sha512",
-    "C:\\Users\\piotr\\.nuget\\packages\\system.text.json\\5.0.0\\system.text.json.5.0.0.nupkg.sha512",
-    "C:\\Users\\piotr\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\piotr\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512"
+    "C:\\Users\\piotr\\.nuget\\packages\\system.net.http.json\\5.0.0\\system.net.http.json.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }
