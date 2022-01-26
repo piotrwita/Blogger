@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "3a5SCRPuo1ACQIIF0d8aYSVLHA1+AYzyDD7f3ZxfxSieiy5lYtWL/vIad5U/1Yjn9d1hE0eD9dBNV+74nfRFZQ==",
+  "dgSpecHash": "Zu2tfTsCxwewo+Ts69yh0OPMj97+Oo5u9GnfRUOH30Ig/Aix8H62DxWbeWRpUOzXBUW/xe1mB7K0rwIgwnTibg==",
   "success": true,
   "projectFilePath": "C:\\Users\\piotr\\source\\repos\\piotrwita\\Blogger\\Application\\Application.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "C:\\Users\\piotr\\.nuget\\packages\\humanizer.core.uk\\2.5.16\\humanizer.core.uk.2.5.16.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
+    "C:\\Users\\piotr\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\10.0.1\\mediatr.extensions.microsoft.dependencyinjection.10.0.1.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\6.0.1\\microsoft.aspnetcore.mvc.razor.extensions.6.0.1.nupkg.sha512",

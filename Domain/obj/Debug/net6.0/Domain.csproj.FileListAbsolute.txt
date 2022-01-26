@@ -11,3 +11,13 @@ C:\Users\piotr\source\repos\Blogger\Domain\obj\Debug\net6.0\ref\Domain.dll
 C:\Users\piotr\source\repos\Blogger\Domain\obj\Debug\net6.0\Domain.pdb
 C:\Users\piotr\source\repos\piotrwita\Blogger\Domain\obj\Debug\net6.0\Domain.dll
 C:\Users\piotr\source\repos\piotrwita\Blogger\Domain\obj\Debug\net6.0\Domain.pdb
+C:\Users\piotr\source\repos\piotrwita\Blogger\Domain\bin\Debug\net6.0\Domain.deps.json
+C:\Users\piotr\source\repos\piotrwita\Blogger\Domain\bin\Debug\net6.0\Domain.dll
+C:\Users\piotr\source\repos\piotrwita\Blogger\Domain\bin\Debug\net6.0\ref\Domain.dll
+C:\Users\piotr\source\repos\piotrwita\Blogger\Domain\bin\Debug\net6.0\Domain.pdb
+C:\Users\piotr\source\repos\piotrwita\Blogger\Domain\obj\Debug\net6.0\Domain.csproj.AssemblyReference.cache
+C:\Users\piotr\source\repos\piotrwita\Blogger\Domain\obj\Debug\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\piotr\source\repos\piotrwita\Blogger\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
+C:\Users\piotr\source\repos\piotrwita\Blogger\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
+C:\Users\piotr\source\repos\piotrwita\Blogger\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\piotr\source\repos\piotrwita\Blogger\Domain\obj\Debug\net6.0\ref\Domain.dll

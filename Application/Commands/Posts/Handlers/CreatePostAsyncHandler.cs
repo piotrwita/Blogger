@@ -8,9 +8,9 @@ namespace Application.Handlers.Posts.Handlers
     public class CreatePostAsyncHandler : IRequestHandler<CreatePostAsyncCommand, PostDto>
     {
         private readonly IPostService _postService;
-        private readonly ILogger<CreatePostAsyncCommand> _logger;
+        private readonly ILogger<CreatePostAsyncHandler> _logger;
 
-        public CreatePostAsyncHandler(IPostService postService, ILogger<CreatePostAsyncCommand> logger)
+        public CreatePostAsyncHandler(IPostService postService, ILogger<CreatePostAsyncHandler> logger)
         {
             _postService =
                 postService ?? throw new ArgumentNullException(nameof(postService));

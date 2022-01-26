@@ -8,7 +8,7 @@ namespace WebAPI.Installers
         {
             //parametr zapewnia to, ze przeskanujemy caly projekt w poszukiwaniu handlerow
             //i automatycznie zarejestrujemy je w domyslnym kontenerze DI 
-            services.AddMediatR(typeof(Program));
+            //services.AddMediatR(typeof(Program));
         }
     }
 }

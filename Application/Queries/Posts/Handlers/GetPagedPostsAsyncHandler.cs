@@ -7,8 +7,8 @@ namespace Application.Queries.Posts.Handlers
     public class GetPagedPostsAsyncHandler : IRequestHandler<GetPagedPostsAsyncQuery, IEnumerable<PostDto>>
     {
         private readonly IPostService _postService;
-        private readonly ILogger<GetPagedPostsAsyncQuery> _logger;
-        public GetPagedPostsAsyncHandler(IPostService postService, ILogger<GetPagedPostsAsyncQuery> logger)
+        private readonly ILogger<GetPagedPostsAsyncHandler> _logger;
+        public GetPagedPostsAsyncHandler(IPostService postService, ILogger<GetPagedPostsAsyncHandler> logger)
         {
             _postService =
                 postService ?? throw new ArgumentNullException(nameof(postService));

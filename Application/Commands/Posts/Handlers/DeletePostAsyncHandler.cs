@@ -7,9 +7,9 @@ namespace Application.Handlers.Posts.Handlers
     public class DeletePostAsyncHandler : IRequestHandler<DeletePostAsyncCommand, Unit>
     {
         private readonly IPostService _postService;
-        private readonly ILogger<DeletePostAsyncCommand> _logger;
+        private readonly ILogger<DeletePostAsyncHandler> _logger;
 
-        public DeletePostAsyncHandler(IPostService postService, ILogger<DeletePostAsyncCommand> logger)
+        public DeletePostAsyncHandler(IPostService postService, ILogger<DeletePostAsyncHandler> logger)
         {
             _postService =
                 postService ?? throw new ArgumentNullException(nameof(postService));

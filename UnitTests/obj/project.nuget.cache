@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xPx9xL9mZLNBspwNh1/2c5LfacXTpRrolJ2U/zXmE8aYUwVBf8EZI+OsgxchNI1XZr43Xr6HumISPlN67rJeMA==",
+  "dgSpecHash": "3UYB0ldKUguuSncs0rKv0RKZ3qFZyRdjdZgd+TGVgEe0ieA/6v0vKIX6/MZizgHaBTyk05QE9HZKkt360Xbprw==",
   "success": true,
   "projectFilePath": "C:\\Users\\piotr\\source\\repos\\piotrwita\\Blogger\\UnitTests\\UnitTests.csproj",
   "expectedPackageFiles": [
@@ -19,6 +19,7 @@
     "C:\\Users\\piotr\\.nuget\\packages\\humanizer.core.uk\\2.5.16\\humanizer.core.uk.2.5.16.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
+    "C:\\Users\\piotr\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\10.0.1\\mediatr.extensions.microsoft.dependencyinjection.10.0.1.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\piotr\\.nuget\\packages\\microsoft.aspnetcore.authentication.cookies\\2.2.0\\microsoft.aspnetcore.authentication.cookies.2.2.0.nupkg.sha512",

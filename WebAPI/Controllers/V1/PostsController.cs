@@ -28,30 +28,27 @@ namespace WebAPI.Controllers.V1
     //umozliwa ograniczenie dostepu do zasobów na podstawie ról
     //określona rola z dostepem do żądanego zasobu z konrolera identity 
     //nadrzedny
-    [Authorize(Roles = UserRoles.User + "," + UserRoles.Admin + "," + UserRoles.SuperUser)]
+    //[Authorize(Roles = UserRoles.User + "," + UserRoles.Admin + "," + UserRoles.SuperUser)]
     [ApiController]
     public class PostsController : Controller
     {
-        private readonly IPostService _postService;
-        private readonly IMemoryCache _memoryCache;
-        private readonly ILogger<PostsController> _logger;
         private readonly IMediator _mediator;
-        public PostsController(IPostService postService,
-                               IMemoryCache memoryCache,
-                               ILogger<PostsController> logger,
-                               IMediator mediator)
+        public PostsController(IMediator mediator)
         {
-            _postService =
-                postService ?? throw new ArgumentNullException(nameof(postService));
-
-            _memoryCache =
-                memoryCache ?? throw new ArgumentNullException(nameof(memoryCache));
-
-            _logger =
-                logger ?? throw new ArgumentNullException(nameof(logger));
-
             _mediator =
                 mediator ?? throw new ArgumentNullException(nameof(mediator));
+        }
+
+        [SwaggerOperation(Summary = "Retrieves all posts")]
+        //[Authorize(Roles = UserRoles.Admin + "," + UserRoles.SuperUser)]
+        //[EnableQuery]
+        [HttpGet("[action]")]
+        public IQueryable<PostDto> GetAll()
+        {
+            var query = new GetAllPostsQuery();
+            var posts = _mediator.Send(query).Result;
+
+            return posts;
         }
 
         [SwaggerOperation(Summary = "Retrieves sort fields")]
@@ -86,30 +83,6 @@ namespace WebAPI.Controllers.V1
             var pagedResponse = PaginationHelper.CreatePagedResponse(posts, validPaginationFilter, totalRecords);
 
             return Ok(pagedResponse);
-        }
-
-        [SwaggerOperation(Summary = "Retrieves all posts")]
-        [Authorize(Roles = UserRoles.Admin + "," + UserRoles.SuperUser)]
-        //[EnableQuery]
-        [HttpGet("[action]")]
-        public IQueryable<PostDto> GetAll()
-        {
-            var posts = _memoryCache.Get<IQueryable<PostDto>>("posts");
-
-            if (posts == null)
-            {
-                _logger.LogInformation("Fetching from service");
-                var query = new GetAllPostsQuery(); 
-                posts = _mediator.Send(query).Result;
-                //dodanie danych do cache, klucz pod ktorym przechowywane sa dane w pamieci, kolekcja danych, czas przez ktory dane sa cachowane
-                _memoryCache.Set("posts", posts, TimeSpan.FromMinutes(1));
-            }
-            else
-            {
-                _logger.LogInformation("Fetching from cache");
-            }
-
-            return posts;
         }
 
         [SwaggerOperation(Summary = "Retrieves a specyfic post by unique id")]

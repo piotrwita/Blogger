@@ -9,9 +9,9 @@ namespace Application.Handlers.Posts
     public class IsUserOwnPostAsyncHandler : IRequestHandler<IsUserOwnPostAsyncQuery, bool>
     {
         private readonly IPostService _postService;
-        private readonly ILogger<CreatePostAsyncCommand> _logger;
+        private readonly ILogger<IsUserOwnPostAsyncHandler> _logger;
 
-        public IsUserOwnPostAsyncHandler(IPostService postService, ILogger<CreatePostAsyncCommand> logger)
+        public IsUserOwnPostAsyncHandler(IPostService postService, ILogger<IsUserOwnPostAsyncHandler> logger)
         {
             _postService =
                 postService ?? throw new ArgumentNullException(nameof(postService));

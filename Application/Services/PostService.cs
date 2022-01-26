@@ -8,7 +8,7 @@ namespace Application.Services
     {
         private readonly IPostRepository _postRepository;
         private readonly IMapper _mapper;
-        private readonly ILogger _logger;
+        private readonly ILogger<PostService> _logger;
 
         public PostService(IPostRepository postRepository,
                            IMapper mapper,
