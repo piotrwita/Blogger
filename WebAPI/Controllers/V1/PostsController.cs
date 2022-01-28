@@ -1,4 +1,5 @@
-﻿using Application.Commands.Posts;
+﻿using App.Metrics;
+using Application.Commands.Posts;
 using Application.Dto.Posts;
 using Application.Handlers.Posts;
 using Application.Interfaces;

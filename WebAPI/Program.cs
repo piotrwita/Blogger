@@ -1,5 +1,7 @@
 //using Microsoft.AspNet.OData.Builder;
 //using Microsoft.AspNet.OData.Extensions;
+using App.Metrics.AspNetCore;
+using App.Metrics.Formatters.Prometheus;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using NLog;
@@ -28,8 +30,24 @@ finally
     //reczne zwolnienie zasobow klasy logera
     LogManager.Shutdown();
 }
-    
+
 builder.Host.UseNLog();
+
+//dodaje servis appmetrics do wykonania middleware
+builder.Host.UseMetricsWebTracking();
+
+builder.Host.UseMetrics(options =>
+{
+    options.EndpointOptions = endpointOptions => //kofiguracja metryk
+    {
+        //formater dla metryk tekstowych (korzystamy z prometeusza)
+        endpointOptions.MetricsTextEndpointOutputFormatter = new MetricsPrometheusTextOutputFormatter();
+        //konfiguracja standardowego formatera (specjalny format czytelny dla prometeusza
+        endpointOptions.MetricsEndpointOutputFormatter = new MetricsPrometheusProtobufOutputFormatter();
+        //standardowa konfiguracja dla appmetrics
+        endpointOptions.EnvironmentInfoEndpointEnabled = false;
+    };
+});
 //builder.Host.UseSerilog((context, configuration) =>
 //{
 //    //umozliwia rejestrowanie dodadkowych wartosci do loga
