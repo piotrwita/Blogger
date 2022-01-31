@@ -1,0 +1,6 @@
+{
+  "Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\piotr\\source\\repos\\piotrwita\\Blogger\\Application",
+  "Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\piotr\\source\\repos\\piotrwita\\Blogger\\Domain",
+  "Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\piotr\\source\\repos\\piotrwita\\Blogger\\Infrastructure",
+  "WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\piotr\\source\\repos\\piotrwita\\Blogger\\WebAPI"
+}

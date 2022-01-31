@@ -25,18 +25,8 @@ namespace EndToEndTests.Controllers
         public PostControllerTests()
         {
             //Arrange - przygotowanie
-            var projectDir = Helper.GetProjectPath("", typeof(Program).GetTypeInfo().Assembly);
-            _server = new TestServer(new WebHostBuilder()
-                .UseEnvironment("Development")
-                .UseContentRoot(projectDir)
-                .UseConfiguration(new ConfigurationBuilder()
-                    .SetBasePath(projectDir)
-                    .AddJsonFile("appsettings.json")
-                    .Build()
-                )
-                .UseStartup<Startup>());
-
-            _client = _server.CreateClient();
+            var application = new WebApplication();
+            _client = application.CreateClient();
         }
 
         [Fact]
@@ -53,8 +43,27 @@ namespace EndToEndTests.Controllers
 
             //Assert
             //sprawdzenie czy api zwraca status 200 ok
-            response.StatusCode.Should().BeEquivalentTo(HttpStatusCode.OK);
+            response.StatusCode.Should().Be(HttpStatusCode.OK);
             pagedResponse.Data.Should().NotBeEmpty();
         }
+
+        [Fact]
+        public async Task fetching_posts_should_return_only_one_record()
+        {
+            //Act
+            var path = @"api/Posts/1";
+            //wysyłanie żądania typu get na wskazany adres
+            var response = await _client.GetAsync(path);
+            //odczytanie rezeltatu
+            var content = await response.Content.ReadAsStringAsync();
+            //deserjalizacja zwracanego obiektu
+            var getByIdResponse = JsonConvert.DeserializeObject<Response<PostDto>>(content);
+
+            //Assert
+            //sprawdzenie czy api zwraca status 200 ok
+            response.StatusCode.Should().Be(HttpStatusCode.OK);
+            getByIdResponse.Data.Should().NotBeNull();
+        }
+
     }
 }
